@@ -15,7 +15,7 @@
   .inner {
     position: relative;
     display: block;
-    width: 1220px;
+    width: 1200px;
     height: 80px;
     margin: 0 auto;
     font-size: 0;
@@ -120,12 +120,12 @@
 
   nav {
     display: block;
-    width: 1220px;
+    width: 1200px;
     margin: 0 auto;
     padding: 0 150px;
     box-sizing: border-box;
 
-    ul {
+    .Ul {
       display: inline-block;
       text-align: center;
 
@@ -149,6 +149,7 @@
           text-transform: uppercase;
           box-sizing: border-box;
           transition: transform 0.65s ease;
+          
 
           &:hover {
             color: #f89700;
@@ -162,111 +163,86 @@
             transition: all 0.3s ease-in-out;
           }
         }
+        .two-depth {
+       
+          display: none;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          // height: 380px;
+          width: 100%;
+// 스타일
+          background: #fff;
+          box-shadow: 0 4px 24px -4px rgba(0, 0, 0, .15);
+          border: 0px solid #d7d7d7;
+          box-sizing: border-box;
+          z-index: 2;
+          // overflow: hidden;
+
+
+
+          .innerWrap {
+            display: flex;
+            width: 840px;
+            text-align: left;
+            margin: 0 auto;
+              padding: 40px;
+              box-sizing: border-box;
+              z-index: 4;
+              h4{
+                font-size: 18px;
+                height: 30px;
+                margin-bottom: 10px;
+                text-align: center;
+              }
+
+            div {
+              flex: 1;
+              text-align: center;
+              margin: 0px;
+              box-sizing: border-box;
+              font-size: 15px;
+
+              h3 {
+                // font-size: 18px;
+                color: #141414;
+                margin-bottom: 10px;
+                 height: 30px;
+                  
+                  a {
+                  
+                    display: block;
+                    color: #141414;
+                    text-decoration: none;
+                    font-size: 15px;
+                    transition: none;
+                    height: 30px;
+                    // margin: 0 auto;
+                    // padding: 0;
+                    
+                    &:hover {
+                      color: #f29300;
+                      border-bottom: #fff;
+                      
+                    }
+                  
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .two-depth {
+            display: block;
+          }
+        }
       }
     }
   }
 }
 
-.two-depth-bg {
-  width: 100%;
-  height: 380px;
-  position: absolute;
-  left: 0;
-  top: 60px;
-  overflow: hidden;
-  background: #fff;
-  border: 0px solid #d7d7d7;
-  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, .15);
-  display: block;
-  z-index: 2;
-  display: none;
-  box-sizing: border-box;
-}
 
-.two-depth {
-  display: block;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 60px;
-  overflow: hidden;
-  background: #fff;
-  border: 0px solid #d7d7d7;
-  box-shadow: 0 4px 24px -8px rgba(0, 0, 0, .15);
-  z-index: 2;
-  display: none;
-  font-size: 0;
-  box-sizing: border-box;
-}
-
-.two-depth .innerWrap {
-  display: block;
-  width: 840px;
-  text-align: left;
-  margin: 0 auto;
-  padding: 40px;
-  box-sizing: border-box;
-  z-index: 4;
-}
-
-.two-depth .innerWrap > div {
-  display: inline-block;
-  text-align: center;
-  margin: 0px 40px;
-  box-sizing: border-box;
-}
-
-.two-depth .innerWrap > div.list01 {
-  width: 100px;
-  margin: 0px 20px;
-}
-
-.two-depth .innerWrap > div.list02 {
-  width: 130px;
-  margin: 0px 20px;
-}
-
-.two-depth .innerWrap > div > h3 {
-  // font-family: 'Spoqa Han Sans Regular';
-  font-size: 20px;
-  line-height: 1;
-  color: #141414;
-  margin-bottom: 20px;
-
-  a.on {
-    color: #f29300;
-  }
-
-  a:hover {
-    color: #f29300;
-  }
-}
-
-.two-depth .innerWrap > div > h4 {
-  // font-family: 'Spoqa Han Sans Regular';
-  font-size: 20px;
-  line-height: 1;
-  color: #a8a8a8;
-  margin-bottom: 20px;
-}
-
-.two-depth .innerWrap > div > p > a {
-  display: block;
-  height: 30px;
-  // font-family: 'Spoqa Han Sans Regular';
-  font-size: 20px;
-  line-height: 28px;
-  color: #141414;
-  margin-bottom: 12px;
-
-  &.on {
-    color: #f29300;
-  }
-
-  &:hover {
-    color: #f29300;
-  }
-}
 
 A.roll img {
   display: inline;

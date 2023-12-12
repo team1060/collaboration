@@ -49,77 +49,116 @@ function Header() {
     <nav>
       <ul className="Ul">
         <li>
-          <a href="/">클럽안내</a>
+        <Link to="/">클럽안내</Link>
           <div className="two-depth">
             <div className="innerWrap">
-              <div><h3><Link to="/">예약</Link></h3></div>
-              <div><h3><Link to="/">예약안내</Link></h3></div>
-              <div><h3><Link to="/">이용안내</Link></h3></div>
+           <div>
+             <h4 >클럽 안내</h4>
+             <div><h3><Link to="/">골프장 메인</Link></h3></div>
+             <div><h3><Link to="/">오시는 길</Link></h3></div>
+              
+           </div>
+           <div>
+           <h4 >요금 안내</h4>
+            <h3><Link to="/">요금 안내</Link></h3>
+           </div>
+
+           <div>
+           <h4 >소개</h4>
+                <div><h3><Link to="/">부대 시설</Link></h3></div>
+                <div><h3><Link to="/">클럽 소개</Link></h3></div>
+             
+           </div>
+
+         
             </div>
           </div>
         </li>
-        <li id="golfList">
-          <Link to="/">예약안내</Link>
+        <li>
+        <Link to="/">예약안내</Link>
           <div className="two-depth">
             <div className="innerWrap">
-              <div className="list01" id="area1">
-                <h4>경기</h4>
-              </div>
-              <div className="list01" id="area2">
-                <h4>충청</h4>
-              </div>
-              <div className="list01" id="area3">
-                <h4>경상</h4>
-              </div>
-              <div className="list01" id="area4">
-                <h4>전라</h4>
-              </div>
-              <div className="list01" id="area5">
-                <h4>제주</h4>
-              </div>
+              
+              <div><h3><Link to="/">예약 및 문의</Link></h3></div>
+              <div><h3><Link to="/">실시간 예약</Link></h3></div>
+              <div><h3><Link to="/">예약확인 및 취소</Link></h3></div>
+              <div><h3><Link to="/">위약 처리규정</Link></h3></div>
+              
             </div>
           </div>
         </li>
         
-        <li className="off"><Link to="/showping">골프마켓</Link></li>
         <li>
-          <Link to="/">고객지원</Link>
+        <Link to="/">골프마켓</Link>
           <div className="two-depth">
             <div className="innerWrap">
-              <div><h3><Link to="/event">이벤트</Link></h3></div>
-              <div><h3><Link to="/notice">공지사항</Link></h3></div>
+           <div>
+             
+             <div><h3><Link to="/">마켓 메인</Link></h3></div>
+             <div><h3><Link to="/">골프 클럽</Link></h3></div>
+             <div><h3><Link to="/">골프 용품</Link></h3></div>
+              
+           </div>
+           <div>
+           
+            <h3><Link to="/">상품 상세</Link></h3>
+           </div>
+
+           <div>
+           
+                <div><h3><Link to="/">상품 주문 확인</Link></h3></div>
+                <div><h3><Link to="/"> 핫 딜 </Link></h3></div>
+             
+           </div>
+
+         
             </div>
           </div>
         </li>
         <li>
-          <Link to="/">마이페이지</Link>
+        <Link to="/">고객지원</Link>
           <div className="two-depth">
             <div className="innerWrap">
-              <div className="list02">
-                <h4>나의 예약</h4>
-                <p><Link to="/">예약내역</Link></p>
-                <p><Link to="/">미션존</Link></p>
-                <p><Link to="/">마일리지</Link></p>
-                <p><Link to="/">텍스트</Link></p>
-              </div>
-              <div className="list02">
-                <h4>라운드기록</h4>
-                <p><Link to="/">예약내역</Link></p>
-                <p><Link to="/">미션존</Link></p>
-                <p><Link to="/">마일리지</Link></p>
-                <p><Link to="/">텍스트</Link></p>
-              </div>
-              <div className="list02">
-                <h4>프로필</h4>
-                <p><a href="/">내 프로필</a></p>
-              </div>
-              <div className="list02">
-                <h4>인증센터</h4>
-                <p><a href="/">인증센터</a></p>
-              </div>
+           <div>
+             
+             <div><h3><Link to="/">FAQ</Link></h3></div>
+             <div><h3><Link to="/">공지사항</Link></h3></div>
+             <div><h3><Link to="/">문의하기</Link></h3></div>
+             <div><h3><Link to="/">문의내용</Link></h3></div>
+              
+           </div>
+           <div>
+           
+                <div><h3><Link to="/">개인정보 취급 방침</Link></h3></div>
+                <div><h3><Link to="/">이용약관</Link></h3></div>
+             
+           </div>
+
+         
             </div>
           </div>
         </li>
+
+        <li>
+        <Link to="/">마이페이지</Link>
+          <div className="two-depth">
+            <div className="innerWrap">
+           <div>
+             
+             <div><h3><Link to="/">회원정보수정</Link></h3></div>
+             <div><h3><Link to="/">회원탈퇴</Link></h3></div>          
+           </div>
+
+           <div>
+                <div><h3><Link to="/">배송지 관리</Link></h3></div>
+                <div><h3><Link to="/">배송지 등록/수정</Link></h3></div>
+           </div>
+
+         
+            </div>
+          </div>
+        </li>
+
       </ul>
     </nav>
   </div>
