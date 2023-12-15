@@ -1,15 +1,11 @@
-import AdminHeader from "./AdminHeader";
-import AdminFooter from "./AdminFooter";
+import "./Style/AdminGlogal.scss"
+
 
 function Admin() {
   return (
-    <>
-    <AdminHeader/>
-    {/* 메인 */}
-    <div style={{paddingTop:"150px"}}>admin 페이지입니다</div>
-
-    <AdminFooter/>
-    </>
+  <div className="AdminGlogal">
+    <p style={{color:"black"}}>통계 페이지 asdasdasdasad</p>
+  </div>
   )
 }
 export default Admin;
