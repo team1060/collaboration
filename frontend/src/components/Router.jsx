@@ -4,10 +4,23 @@ import Header from "./Header";
 import Footer from "./Footer";
 // 메인
 import HomeList from "../Routes/Home/Home";
-import Intro from "../Routes/Home/Intro"; // 클럽 소개 //Inquiry Mart member Join
-// 예약안내
+import Intro from "../Routes/Home/Intro"; // 골프 상세페이지 나중에 변경될수도있음
+import Reservation from "../Routes/Home/Reservation";
+// 상품
+import Shop from "../Routes/shop/Shop"; //상품 메인
+import Product from "../Routes/shop/Product";// 상품 목록 
+// 배송
+import Addr from "../Routes/addr/Addr";
+import Detail from "../Routes/addr/Detail";
+// 고객 지원
+
+// 마이페이지 
+
 // 로그인 회원가입
 import Member from "../Routes/mart/Member";
+
+
+
 
 
 // 관리자 페이지 import 
@@ -42,10 +55,19 @@ function Router() {
           path="/"
           element={<MainLayout><HomeList /></MainLayout>}
         />
-        <Route path="/golf/intro" element={<MainLayout><Intro /></MainLayout>} />
-        <Route path="/member" element={<MainLayout><Member /></MainLayout>} />
-        <Route path="/list2" element={<MainLayout>상품페이지2</MainLayout>} />
-        <Route path="/list3" element={<MainLayout>상품페이지3</MainLayout>} />
+        {/* 골프장 상세페이지, 골프 예약 */}
+        <Route path="/reservation" element={<MainLayout><Reservation /></MainLayout>} />
+        <Route path="/golf/intro" element={<MainLayout><Intro /></MainLayout>} /> 
+          {/* 상품 메인 목록  */}
+        <Route path="/shop" element={<MainLayout><Shop /></MainLayout>} />
+        <Route path="/product" element={<MainLayout><Product /></MainLayout>} />
+        {/* 배송 목록 배송지 등록 수정  */}
+        <Route path="/addr" element={<MainLayout><Addr/></MainLayout>} />
+        <Route path="/detail" element={<MainLayout><Detail/></MainLayout>} />
+        {/* 로그인 회원 가입 */}
+        <Route path="/member" element={<MainLayout><Member/></MainLayout>} />
+
+
 
         {/* 어드민 라우트 */}
         <Route
