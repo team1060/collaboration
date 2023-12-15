@@ -80,3 +80,11 @@ npm i react-router-dom
 
 ### 사스 scss 스타일 style.scss
 npm i sass
+
+### 사이드 바 mui 사용 
+npm install @mui/material @emotion/react @emotion/styled
+
+npm install @material-ui/icons
+
+npm install @mui/icons-material
+
