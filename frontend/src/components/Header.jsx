@@ -1,32 +1,15 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link } from "react-router-dom";
 import './style/HeaderStyle.scss';
 
 
 function Header() {
-  const [isSideMenuOpen, setSideMenuOpen] = useState(false);
-
-  const toggleSideMenu = () => {
-    setSideMenuOpen(!isSideMenuOpen);
-  };
-
-  const closeSideMenu = () => {
-    setSideMenuOpen(false);
-  };
+  
 
   return (
     <div className="HeaderContainer"  >
       
-      {/* 토글 버튼 */}
-      <button onClick={toggleSideMenu} style={{width:"50px", height:"50px"}}>=</button>
-
-      {/* 사이드 메뉴 */}
-      <div className={`side-menu ${isSideMenuOpen ? "open" : ""}`}>
-        {/* 사이드 메뉴 내용 */}
-        <button className="close-btn" onClick={closeSideMenu}>
-          &times;
-        </button>
-      </div>
+     
       <div id="header">
   <div className="inner">
     <h1 className="logo">
