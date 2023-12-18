@@ -1,0 +1,50 @@
+.golf-course-section {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  background-color: #fff; // 배경색 설정
+  max-width: 1200px;
+  .golf-course-image {
+    position: relative;
+    .image-placeholder {
+      background-color: #ccc; // 회색 박스 색상
+      width: 450px; // 박스 너비
+      height: 250px; // 박스 높이
+    }
+    .image-buttons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      button {
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        margin: 2px;
+        // 버튼 스타일 설정
+      }
+    }
+  }
+  .golf-course-info {
+    padding: 20px;
+    .title {
+      font-size: 20px; // 타이틀 폰트 크기
+      color: #000; // 타이틀 색상
+    }
+    .description {
+      font-size: 14px; // 설명 폰트 크기
+      color: #555; // 설명 색상
+    }
+    .stats {
+      margin-top: 10px;
+      .hole-info, .par-info, .length-info {
+        font-size: 14px; // 통계정보 폰트 크기
+        margin-right: 10px;
+      }
+      .discount {
+        font-size: 14px;
+        color: #FF0000; // 할인율 색상
+        font-weight: bold;
+      }
+    }
+  }
+}
