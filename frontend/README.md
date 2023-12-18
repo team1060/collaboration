@@ -88,3 +88,13 @@ npm install @material-ui/icons
 
 npm install @mui/icons-material
 
+### 어드민 그래프 바 
+npm install @nivo/bar
+
+npm install swiper
+
+### 슬라이더 캘린더 
+npm install vue-horizontal-calendar -S
+npm install react-horizontal-datepicker
+
+npm install react-calendar --save

@@ -31,12 +31,12 @@ function Footer() {
           <div className="footer-section"> 
           <div className="sns">
               <div>
-                <Link to={"/"} className="facebook" target="_blank">
+                <Link to={"https://redapgod.netlify.app/"} className="facebook" target="_blank">
                 <img src="./img/i_fbook.png" alt="" />facebook
                 </Link>
               {/* </div>
               <div> */}
-                <Link to={"/"} className="instagram" target="_blank">
+                <Link to={"https://redapgod.netlify.app/"} className="instagram" target="_blank">
                 <img src="./img/i_instagram.png" alt="" />instagram
                 </Link>
               </div>

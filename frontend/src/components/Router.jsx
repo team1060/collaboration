@@ -5,6 +5,7 @@ import Footer from "./Footer";
 // 메인
 import HomeList from "../Routes/Home/Home";
 import Intro from "../Routes/Home/Intro"; // 골프 상세페이지 나중에 변경될수도있음
+import EventDetail from "../Routes/Home/EventDetail";
 import Reservation from "../Routes/Home/Reservation";
 // 상품
 import Shop from "../Routes/shop/Shop"; //상품 메인
@@ -58,6 +59,7 @@ function Router() {
         {/* 골프장 상세페이지, 골프 예약 */}
         <Route path="/reservation" element={<MainLayout><Reservation /></MainLayout>} />
         <Route path="/golf/intro" element={<MainLayout><Intro /></MainLayout>} /> 
+        <Route path="/golf/intro/:eventname" element={<MainLayout><EventDetail /></MainLayout>} /> 
           {/* 상품 메인 목록  */}
         <Route path="/shop" element={<MainLayout><Shop /></MainLayout>} />
         <Route path="/product" element={<MainLayout><Product /></MainLayout>} />
