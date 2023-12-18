@@ -88,3 +88,6 @@ npm install @material-ui/icons
 
 npm install @mui/icons-material
 
+### 어드민 그래프 바 
+npm install @nivo/bar
+
