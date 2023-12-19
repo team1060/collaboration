@@ -98,3 +98,6 @@ npm install vue-horizontal-calendar -S
 npm install react-horizontal-datepicker
 
 npm install react-calendar --save
+
+### 엑시우스  json 데이트 가져오기 
+npm install axios
