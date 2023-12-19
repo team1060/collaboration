@@ -2,7 +2,8 @@ import CalendarSwiper from './CalendarSwiper';
 import ImgSwiper from './ImgSwiper';
 import GolfCourseSection from './GolfCourseSection ';
 import './Home.scss'
-import { Button } from '@mui/material';
+import { Button, Container } from '@mui/material';
+import { Grid } from 'swiper/modules';
 
 // import { blue } from '@mui/material/colors'; 
 function HomeList() {
