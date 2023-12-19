@@ -13,7 +13,9 @@ function HomeList() {
     <div>
       <ImgSwiper/>
       <CalendarSwiper/>
-    <GolfCourseSection/>
+      {/* 일정 관리표 */}
+      <GolfCourseSection/>
+      {/* 골프소개  */}
     </div>
     <Button color='primary'></Button>
     <a href="/golf/intro" style={{color:"black"}}>골프소개페이지입니다</a>
