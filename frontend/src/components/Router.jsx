@@ -3,10 +3,10 @@ import { BrowserRouter, Routes , Route} from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 // 메인
-import HomeList from "../Routes/Home/Home"; // 메인 홈페이지 
-import Intro from "../Routes/Home/Page/Intro"; // 골프 상세페이지 
-import EventDetail from "../Routes/Home/Page/EventDetail"; // 골프 
-import Reservation from "../Routes/Home/Page/Reservation"; // 골프 예매 페이지 
+import HomeList from "../Routes/Home/Home";
+import Intro from "../Routes/Home/Intro"; // 골프 상세페이지 나중에 변경될수도있음
+import EventDetail from "../Routes/Home/EventDetail";
+import Reservation from "../Routes/Home/Reservation";
 // 상품
 import Shop from "../Routes/shop/Shop"; //상품 메인
 import Product from "../Routes/shop/Product";// 상품 목록 

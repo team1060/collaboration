@@ -14,7 +14,6 @@ import ListItemText from '@mui/material/ListItemText';
 
 import { Link } from 'react-router-dom';
 
-// 아이콘 이미지 url 이라고 보면 됨 
 import BarChartIcon from '@mui/icons-material/BarChart'; // 통계
 import GroupIcon from '@mui/icons-material/Group'; //회원
 import WidgetsIcon from '@mui/icons-material/Widgets'; // 상품
