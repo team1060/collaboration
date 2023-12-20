@@ -7,14 +7,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-/*
- * 골프장 이미지 
+/**
+ * <pre>
+ * 골프장 이미지
+ * </pre>
+ * @author KJY
+ * @since 2023.12.19
  */
 
-@Builder
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class GolfImage {
 	private UUID uuid; 
 	private String category; // 이미지 카테고리 

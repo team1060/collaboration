@@ -19,19 +19,12 @@ import com.team1060.golf.golf.vo.Golf;
 
 import lombok.RequiredArgsConstructor;
 
-/*
- * {
-    "golf_no": Long,
-    "region": String,
-    "name": String,
-    "description": String,
-    "holes": int,
-    "pars": int,
-    "landArea": int,
-    "address": String,
-    "contact": String,
-    "fax": String
-  }
+/**
+ * <pre>
+ * 골프장 api 
+ * </pre>
+ * @author KJY
+ * @since 2023.12.20
  */
 
 @RestController
@@ -40,14 +33,15 @@ public class GolfApi {
 
 	private final GolfService golfService;
 	
+	// 테스트용 코드 
 	@GetMapping("/")
     public @ResponseBody String Hello(){
         return "backend";
     }
 	
-	// 골프장 조회 
+	// 골프장 전체조회 
 	@GetMapping("/golf")
-	public List<Golf> selectAll() {
+	public List<ViewGolf> selectAll() {
 		return golfService.selectAll();
 	}
 	
@@ -64,8 +58,28 @@ public class GolfApi {
 	
 	// 골프장 1개 조회 
 	@GetMapping("/golf/{golf_no}")
-	public Golf select(@PathVariable(name = "golf_no") Long golf_no) {
+	public ViewGolf select(@PathVariable(name = "golf_no") Long golf_no) {
 		return golfService.select(golf_no);
+	}
+	
+	// 골프장 1개 수정 
+	@PostMapping("/golf/{golf_no}")
+	public ResponseEntity<String> modifyGolf(@RequestBody RegisterAndModifyGolf request){
+		try {
+			golfService.modifyGolf(request);
+			return ResponseEntity.ok("골프장 수정 성공");
+		}catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("골프장 수정 실패" + e.getMessage());
+		}
+	}
+	
+	/*
+	 * 골프장 지역별로 조회 
+	 * @PathVariable이 16진수로 자동으로 변환해줌 
+	 */
+	@GetMapping("/golf/info/{region}")
+	public List<ViewGolf> selectRegion(@PathVariable(name = "region") String region){
+		return golfService.selectRegion(region);
 	}
 }
 

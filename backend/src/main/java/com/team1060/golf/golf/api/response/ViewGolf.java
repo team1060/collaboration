@@ -10,12 +10,18 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-/*
- * 골프장 전체 조회 & 1개 조회 
+/**
+ * <pre>
+ * 골프장 1개조회 & 전체조회 & 지역별 조회
+ * </pre>
+ * @author KJY
+ * @since 2023.12.20
  */
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ViewGolf {
 	private Long golf_no; // 골프장 pk 
 	private String region; // 지역 

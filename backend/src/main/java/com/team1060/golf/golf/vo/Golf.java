@@ -5,14 +5,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-/*
- * 골프장 
+/**
+ * <pre>
+ * 골프장
+ * </pre>
+ * @author KJY
+ * @since 2023.12.19
  */
-
-@Builder
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 
 public class Golf { // 골프장 
 	private Long golf_no; // 골프장 pk 

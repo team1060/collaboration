@@ -1,17 +1,24 @@
 package com.team1060.golf.golf.api.request;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-/*
+/**
+ * <pre>
  * 골프장 등록 & 수정 
+ * </pre>
+ * @author KJY
+ * @since 2023.12.20
  */
 
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RegisterAndModifyGolf {
+	private Long golf_no; // 골프장 pk 
 	private String region; // 지역 
 	private String name; // 골프장명 
 	private String description; // 골프장 설명 

@@ -7,14 +7,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-/*
+/**
+ * <pre>
  * 골프장 예약
+ * </pre>
+ * @author KJY
+ * @since 2023.12.19
  */
 
-@Builder
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class GolfReserve { 
 	private Long reserve_no; // 예약 번호 
 	private Long course_no; // 코스번호 
