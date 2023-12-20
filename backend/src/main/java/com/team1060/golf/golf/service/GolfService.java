@@ -18,7 +18,7 @@ public class GolfService {
 	private final GolfMapper golfMapper;
 	
 	// 등록 
-	public int Register(RegisterAndModifyGolf request) {
+	public int register(RegisterAndModifyGolf request) {
 		return golfMapper.insert(request);
 	}
 	
@@ -36,7 +36,7 @@ public class GolfService {
 		return golfMapper.update(request);
 	}
 	// 삭제 
-	public int deleteGolf(Long golf_no) {
+	public int removeGolf(Long golf_no) {
 		return golfMapper.delete(golf_no);
 	}
 	
