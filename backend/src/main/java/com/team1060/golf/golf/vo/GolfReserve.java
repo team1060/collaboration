@@ -1,4 +1,4 @@
-package com.team1060.golf.golf.entity;
+package com.team1060.golf.golf.vo;
 
 import java.time.ZonedDateTime;
 

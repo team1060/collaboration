@@ -1,4 +1,6 @@
-package com.team1060.golf.golf.entity;
+package com.team1060.golf.golf.vo;
+
+import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GolfImage {
-	private String uuid; 
+	private UUID uuid; 
 	private String category; // 이미지 카테고리 
 	private Long course_no; // 코스 번호 
 	private String path; // 이미지 경로 

@@ -1,23 +1,17 @@
-package com.team1060.golf.golf.api.response;
-
-import java.util.List;
-import java.util.UUID;
-
-import com.team1060.golf.golf.vo.GolfImage;
+package com.team1060.golf.golf.api.request;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /*
- * 골프장 전체 조회 & 1개 조회 
+ * 골프장 등록 & 수정 
  */
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ViewGolf {
-	private Long golf_no; // 골프장 pk 
+public class RegisterAndModifyGolf {
 	private String region; // 지역 
 	private String name; // 골프장명 
 	private String description; // 골프장 설명 
