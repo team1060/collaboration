@@ -1,67 +1,75 @@
 import React, { useState } from 'react';
-import '../style/GolfCourseSection.scss';
-import coursesData from '../data/golf.json';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import coursesData from '../data/golf.json'; // golf.json 경로 확인 필요
 
-const GolfCourseCard = ({ course, onClick }) => {
+const GolfCourseCard = ({ course }) => {
   return (
-    <div className="golf-course-card" onClick={() => onClick(course)}>
-      <div className="golf-course-image-placeholder"></div>
-      <div className="golf-course-info">
-        <h2 className="golf-course-name">{course.name}</h2>
-        <p className="golf-course-description">{course.description}</p>
-        <p className="golf-course-holes-pars">{course.holes} 홀 / 파 {course.pars}</p>
-        <p className="golf-course-land-area">면적: {course.landArea}㎡</p>
-        <p className="golf-course-contact">{course.contact}</p>
-        <button className="golf-course-reservation-button">예약하기</button>
+
+    <div style={{width:"100%", margin:"0 auto"}}> 
+      <Card sx={{ display: 'flex', margin: '20px', padding: '10px' }}>
+        {/* 이미지 자리 (임시로 색상만 표시) */}
+        <CardMedia
+            component="img"
+            sx={{ width: 450, height: 250 }}
+            image="./img/pc04.jpg" // Update the image path to the correct one
+            alt="Golf Course"
+          />
+      
+        <CardContent sx={{ flex: '1' }}>
+          <Typography component="h5" variant="h5">
+            {course.name}
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary">
+            {course.description}
+          </Typography>
+          <Typography variant="subtitle1">
+            {course.holes} 홀 / 파 {course.pars}
+          </Typography>
+          <Typography variant="subtitle1">
+            면적: {course.landArea}㎡
+          </Typography>
+          <Typography variant="subtitle1">
+            {course.contact}
+          </Typography>
+          {/* 예약 버튼은 그대로 유지 */}
+          <Button variant="contained" color="primary">
+            예약하기
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+
+  );
+};
+
+const GolfCourseSection = () => {
+  const [selectedCourse, setSelectedCourse] = useState(coursesData[0]); // 초기값 설정
+
+  const handleRegionClick = (region) => {
+    const filteredCourses = coursesData.filter(course => course.region === region);
+    const randomCourse = filteredCourses[Math.floor(Math.random() * filteredCourses.length)];
+    setSelectedCourse(randomCourse);
+  };
+
+  return (
+    <div style={{width:"1200px", margin:"0 auto" , marginTop:"15px"}}> 
+      {/* 지역 버튼 */}
+      <div style={{paddingLeft:"20px"}}>
+        <Button sx={{ pl: 3, pr:3, alignItems: 'center'}} variant="contained" color="primary" onClick={() => handleRegionClick('경기')}>경기</Button>
+        <Button sx={{ pl: 3, pr:3, alignItems: 'center'}} variant="contained" color="primary" onClick={() => handleRegionClick('충청')}>충청</Button>
+        <Button sx={{ pl: 3, pr:3, alignItems: 'center'}}variant="contained" color="primary" onClick={() => handleRegionClick('경상')}>경상</Button>
+        <Button sx={{ pl: 3, pr:3, alignItems: 'center'}}variant="contained" color="primary" onClick={() => handleRegionClick('전라')}>전라</Button>
+      </div>
+      {/* 골프 코스 카드 */}
+      <div>
+        {selectedCourse && <GolfCourseCard course={selectedCourse} />}
       </div>
     </div>
   );
 };
 
-const GolfCourseSection = () => {
-  const [selectedCourse, setSelectedCourse] = useState(null);
-  // const [selectedRegion, setSelectedRegion] = useState('');
-
-  
-  // 지역 버튼 클릭 핸들러
-  const handleRegionClick = (region) => {
-    // setSelectedRegion(region);
-    
-    // 선택된 지역의 골프 코스들을 필터링합니다.
-    const filteredCourses = coursesData.filter(course => course.region === region);
-
-    // 필터링된 골프 코스들 중에서 랜덤으로 하나를 선택합니다.
-    const randomCourse = filteredCourses[Math.floor(Math.random() * filteredCourses.length)];
-
-    // 선택된 골프 코스를 상태에 설정합니다.
-    setSelectedCourse(randomCourse);
-  };
-  
-  // 지역 버튼 컴포넌트
-  const RegionButton = ({ region }) => {
-    return <button onClick={() => handleRegionClick(region)}>{region}</button>;
-  };
-
-
-  // const handleCardClick = (course) => {
-  //   setSelectedCourse(course);
-  //   console.log(handleCardClick);
-  // }; // 오류 주석처리 
-
-  return (
-    <div>
-    <div className="region-buttons">
-    
-      <RegionButton region="경기" />
-      <RegionButton region="충청" />
-      <RegionButton region="경상" />
-      <RegionButton region="전라" />
- 
-    </div>
-    <section className="golf-course-section">
-      {selectedCourse && <GolfCourseCard course={selectedCourse} />}
-    </section>
-  </div>
-);
-};
 export default GolfCourseSection;
