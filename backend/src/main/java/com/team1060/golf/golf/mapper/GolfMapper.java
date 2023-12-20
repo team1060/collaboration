@@ -1,17 +1,10 @@
 package com.team1060.golf.golf.mapper;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 import com.team1060.golf.golf.api.request.RegisterAndModifyGolf;
 import com.team1060.golf.golf.api.response.ViewGolf;
-import com.team1060.golf.golf.vo.Golf;
 
 /**
  * <pre>

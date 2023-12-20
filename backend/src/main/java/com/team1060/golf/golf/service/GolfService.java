@@ -11,6 +11,14 @@ import com.team1060.golf.golf.api.response.ViewGolf;
 import com.team1060.golf.golf.mapper.GolfMapper;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * <pre>
+ * 골프장 CRUD
+ * </pre>
+ * @author KJY
+ * @since 2023.12.20
+ */
+
 @Service
 @RequiredArgsConstructor
 public class GolfService {
@@ -18,7 +26,7 @@ public class GolfService {
 	private final GolfMapper golfMapper;
 	
 	// 등록 
-	public int Register(RegisterAndModifyGolf request) {
+	public int register(RegisterAndModifyGolf request) {
 		return golfMapper.insert(request);
 	}
 	
@@ -36,7 +44,7 @@ public class GolfService {
 		return golfMapper.update(request);
 	}
 	// 삭제 
-	public int deleteGolf(Long golf_no) {
+	public int removeGolf(Long golf_no) {
 		return golfMapper.delete(golf_no);
 	}
 	
