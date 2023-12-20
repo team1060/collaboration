@@ -14,7 +14,7 @@ const bull = (
     •
   </Box>
 );
-
+// asd
 export default function BasicCard() {
   return (
     <Card sx={{ minWidth: 275 }}>
