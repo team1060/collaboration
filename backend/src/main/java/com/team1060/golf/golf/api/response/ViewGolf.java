@@ -1,11 +1,17 @@
 package com.team1060.golf.golf.api.response;
 
+import java.util.List;
+import java.util.UUID;
+
+import com.team1060.golf.golf.vo.GolfImage;
+
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /*
- * 골프장 전체 조회 
+ * 골프장 전체 조회 & 1개 조회 
  */
 @Getter
 @AllArgsConstructor

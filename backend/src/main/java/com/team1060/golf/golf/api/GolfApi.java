@@ -6,15 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.team1060.golf.golf.api.request.RegisterGolf;
+import com.team1060.golf.golf.api.request.RegisterAndModifyGolf;
 import com.team1060.golf.golf.api.response.ViewGolf;
-import com.team1060.golf.golf.entity.Golf;
 import com.team1060.golf.golf.service.GolfService;
+import com.team1060.golf.golf.vo.Golf;
 
 import lombok.RequiredArgsConstructor;
 
@@ -52,7 +53,7 @@ public class GolfApi {
 	
 	// 골프장 등록 
 	@PostMapping("/golf")
-	public ResponseEntity<String> registerGolf(@RequestBody RegisterGolf request){
+	public ResponseEntity<String> registerGolf(@RequestBody RegisterAndModifyGolf request){
 		try {
 			golfService.Register(request);
 			return ResponseEntity.ok("골프장 등록 성공");
@@ -61,6 +62,11 @@ public class GolfApi {
 		}
 	}
 	
+	// 골프장 1개 조회 
+	@GetMapping("/golf/{golf_no}")
+	public Golf select(@PathVariable(name = "golf_no") Long golf_no) {
+		return golfService.select(golf_no);
+	}
 }
 
 
