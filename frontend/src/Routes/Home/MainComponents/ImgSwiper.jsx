@@ -5,7 +5,9 @@ import 'swiper/swiper-bundle.css';
 
 function ImgSwiper() {
   return (
+
     <div className="swiper-container" style={{maxWidth:"1200px", margin:"0 auto", paddingTop:"80px"}}>
+
       <Swiper
         spaceBetween={10}
         slidesPerView={1}
