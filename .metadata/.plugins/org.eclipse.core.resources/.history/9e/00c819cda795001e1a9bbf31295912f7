@@ -1,8 +1,0 @@
-# port 설정
-server.port=8081
-
-# DB 설정
-spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
-spring.datasource.url=jdbc:mariadb://team1060.com:3306/golf
-spring.datasource.username=ghl
-spring.datasource.password=1234
