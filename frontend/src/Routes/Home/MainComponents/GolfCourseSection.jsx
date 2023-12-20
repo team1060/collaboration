@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './GolfCourseSection.scss';
-import coursesData from './golf.json';
+import '../style/GolfCourseSection.scss';
+import coursesData from '../data/golf.json';
 
 const GolfCourseCard = ({ course, onClick }) => {
   return (
@@ -20,12 +20,12 @@ const GolfCourseCard = ({ course, onClick }) => {
 
 const GolfCourseSection = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [selectedRegion, setSelectedRegion] = useState('');
+  // const [selectedRegion, setSelectedRegion] = useState('');
 
   
   // 지역 버튼 클릭 핸들러
   const handleRegionClick = (region) => {
-    setSelectedRegion(region);
+    // setSelectedRegion(region);
     
     // 선택된 지역의 골프 코스들을 필터링합니다.
     const filteredCourses = coursesData.filter(course => course.region === region);
@@ -43,9 +43,10 @@ const GolfCourseSection = () => {
   };
 
 
-  const handleCardClick = (course) => {
-    setSelectedCourse(course);
-  };
+  // const handleCardClick = (course) => {
+  //   setSelectedCourse(course);
+  //   console.log(handleCardClick);
+  // }; // 오류 주석처리 
 
   return (
     <div>

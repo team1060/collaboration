@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-
 const theme = createTheme({
     components: {
         MuiCssBaseline: {
@@ -7,8 +6,10 @@ const theme = createTheme({
                 "*": {
                     boxSizing: "border-box",
                     margin: 0,
-                    padding: 0
+                    padding: 0,
+                    listStyle: "none",
                 },
+                
                 html: {
                     width: "100%",
                     height: "100%"
@@ -19,11 +20,15 @@ const theme = createTheme({
                     color: "#1D1D1B",
                     background: "#ffffff"
                 },
+                a:{
+                    textDecoration: "none",
+                    color: "white", // 추가 
+                  },
             }
         }
     },
     palette: {
-        primary: {
+        primary: { // 클레스네임에 들어가는 이름? 
             main: "#01387F", // 기본 기본 글꼴 색상
             modal: "#262626", // 모달 배경 색상
             grayText: "#666666", // 회색 텍스트 색상

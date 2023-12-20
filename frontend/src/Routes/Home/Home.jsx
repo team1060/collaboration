@@ -1,10 +1,9 @@
-import CalendarSwiper from './CalendarSwiper';
-import ImgSwiper from './ImgSwiper';
-import GolfCourseSection from './GolfCourseSection ';
-import './Home.scss'
-import { Button, Container } from '@mui/material';
-import { Grid } from 'swiper/modules';
-
+import CalendarSwiper from './MainComponents/CalendarSwiper';
+import ImgSwiper from './MainComponents/ImgSwiper';
+import GolfCourseSection from './MainComponents/GolfCourseSection';
+import './style/Home.scss'
+import { Button } from '@mui/material';
+// 사이트 메인페이지 
 // import { blue } from '@mui/material/colors'; 
 function HomeList() {
   return (
