@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,15 +30,16 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/admin")
 public class GolfApi {
 
 	private final GolfService golfService;
 	
-	// 테스트용 코드 
-	@GetMapping("/")
-    public @ResponseBody String Hello(){
-        return "backend";
-    }
+//	// 테스트용 코드 
+//	@GetMapping("/")
+//    public @ResponseBody String Hello(){
+//        return "backend";
+//    }
 	
 	// 골프장 전체조회 
 	@GetMapping("/golf")

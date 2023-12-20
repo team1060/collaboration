@@ -11,6 +11,14 @@ import com.team1060.golf.golf.api.response.ViewGolf;
 import com.team1060.golf.golf.mapper.GolfMapper;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * <pre>
+ * 골프장 CRUD
+ * </pre>
+ * @author KJY
+ * @since 2023.12.20
+ */
+
 @Service
 @RequiredArgsConstructor
 public class GolfService {

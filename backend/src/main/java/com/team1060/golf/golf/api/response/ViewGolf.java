@@ -21,7 +21,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class ViewGolf {
 	private Long golf_no; // 골프장 pk 
 	private String region; // 지역 
