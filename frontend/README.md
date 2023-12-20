@@ -93,11 +93,15 @@ npm install @nivo/bar
 
 npm install swiper
 
-### 슬라이더 캘린더 
+### 슬라이더 캘린더 설치 후 삭제 안됨 
 npm install vue-horizontal-calendar -S
+npm uninstall vue-horizontal-calendar -S
+
 npm install react-horizontal-datepicker
+npm uninstall react-horizontal-datepicker
 
 npm install react-calendar --save
+npm uninstall react-calendar --save
 
 ### 엑시우스  json 데이트 가져오기 
 npm install axios
