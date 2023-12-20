@@ -4,10 +4,10 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom'; // React Router에서 Link 컴포넌트 가져오기
-import '../style/CalendarSwiper.scss'
+import './CalendarSwiper.scss'
 
-// 데이터는 모듈에서 망가짐 대소문자 무시 함 폴더명 소문자 
-import weeksData from '../data/data.js';
+
+import weeksData from './data';
 
 const CalendarSwiper = () => {
   const [selectedDayData, setSelectedDayData] = useState(null);
