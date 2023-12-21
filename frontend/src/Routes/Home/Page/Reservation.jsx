@@ -1,17 +1,13 @@
-// 메인/ 골프 예약 페이지
+import Head from "./reservation/Head";
+import Calendar from "./reservation/Calendar";
 
 function Reservation() {
-  return(
-
+  return (
     <>
-   <div style={{paddingTop:"150px"}}>골프 예약  페이지</div>
-    
-    
-
-     </>
-
+      <Head />
+      <Calendar />
+    </>
   )
-  
 }
 
 export default Reservation;
