@@ -60,7 +60,7 @@ function Router() {
         {/* 골프장 상세페이지, 골프 예약 */}
         <Route path="/reservation" element={<MainLayout><Reservation /></MainLayout>} />
         <Route path="/golf/info" element={<MainLayout><Info /></MainLayout>} /> 
-        {/* <Route path="/golf/info/:" element={<MainLayout><Intro /></MainLayout>} />  */}
+        <Route path="/golf/infoinner" element={<MainLayout><Infoinner /></MainLayout>} /> 
 
         {/* 골프장 예매 상세페이지 */}
 

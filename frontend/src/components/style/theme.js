@@ -9,7 +9,7 @@ const theme = createTheme({
                     padding: 0,
                     listStyle: "none",
                 },
-                
+
                 html: {
                     width: "100%",
                     height: "100%"
@@ -23,7 +23,7 @@ const theme = createTheme({
                 a:{
                     textDecoration: "none",
                     color: "white", // 추가 
-                  },
+                },
             }
         }
     },
