@@ -30,6 +30,7 @@ import Admin from "../Routes/admin/Admin";
 import AdminHeader from "../Routes/admin/AdminHeader";
 import AdminFooter from "../Routes/admin/AdminFooter";
 import AdminMember from "../Routes/admin/AdminMember";
+import Infoinner from "../Routes/Home/Page/Infoinner";
 
 // 공통 레이아웃 컴포넌트
 const MainLayout = ({ children }) => (
@@ -60,7 +61,7 @@ function Router() {
         {/* 골프장 상세페이지, 골프 예약 */}
         <Route path="/reservation" element={<MainLayout><Reservation /></MainLayout>} />
         <Route path="/golf/info" element={<MainLayout><Info /></MainLayout>} /> 
-        {/* <Route path="/golf/info/:" element={<MainLayout><Intro /></MainLayout>} />  */}
+        <Route path="/golf/infoinner" element={<MainLayout><Infoinner /></MainLayout>} /> 
 
         {/* 골프장 예매 상세페이지 */}
 

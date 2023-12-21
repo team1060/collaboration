@@ -1,4 +1,6 @@
 import { createTheme } from "@mui/material/styles";
+import * as themeStyle from "./themeStyle" 
+
 const theme = createTheme({
     components: {
         MuiCssBaseline: {
@@ -9,41 +11,74 @@ const theme = createTheme({
                     padding: 0,
                     listStyle: "none",
                 },
-                
+
                 html: {
                     width: "100%",
-                    height: "100%"
+                    height: "100%",
+                    fontSize: themeStyle.$fontSize,
+                    color: themeStyle.$mainfontColor
                 },
                 body: {
                     width: "100%",
                     height: "100%",
                     color: "#1D1D1B",
-                    background: "#ffffff"
+                    background: themeStyle.$whiteColor,
+                    fontSize: "1rem"
                 },
-                a:{
+                a: {
                     textDecoration: "none",
-                    color: "white", // 추가 
-                  },
+                    color: themeStyle.$whiteColor, // 추가 
+                },
+                h1: {
+                    fontSize: themeStyle.$headline1,
+                    fontWeight: 'bold'
+                },
+                h2: {
+                    fontSize: themeStyle.$headline2,
+                    fontWeight: 'bold'
+                },
+                h3: {
+                    fontSize: themeStyle.$headline3,
+                    fontWeight: 'bold'
+                },
+                ".menu": {
+                    fontSize: themeStyle.$menuTitle,
+                },
+                ".sub": {
+                    fontSize: themeStyle.$subTitle,
+                },
+                ".tit": {   
+                    fontSize: themeStyle.$title1,
+                    fontWeight: 'bold'
+                },
+                ".thead": {
+                    fontSize: themeStyle.$title2,
+                    fontWeight: 'bold'
+                },
+                ".tbody": {
+                    fontSize: themeStyle.$body2,
+                },
+                "button": {
+                    fontSize: themeStyle.$button,
+                }
+                
             }
         }
     },
     palette: {
         primary: { // 클레스네임에 들어가는 이름? 
-            main: "#01387F", // 기본 기본 글꼴 색상
-            modal: "#262626", // 모달 배경 색상
-            grayText: "#666666", // 회색 텍스트 색상
-            calendarBackground: "#4C4C4C", // 달력 배경 색상
-            cartDescriptionBackground: "#4C4C4C", // 장바구니 설명란 배경 색상
-            priceCalculationBackground: "#01387F", // 가격 계산 배경 색상
-            hoverColor: "#2D2D2B", // 호버 시 색상
+            main: themeStyle.$primaryColor
         },
         secondary: {
-            main: "#FF0000" // 보조 색상
+            main: themeStyle.$redColor // 보조 색상
         },
     },
     typography: {
         fontFamily: ['Spoqa Han Sans Neo', 'sans-serif'].join(","),
-        "@import": "url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css')"
+        "@import": "url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css')",
+
+
+        
     }
 });
 

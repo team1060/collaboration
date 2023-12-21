@@ -1,4 +1,4 @@
-package com.team1060.golf.golf.entity;
+package com.team1060.golf.golf.vo;
 
 import java.time.ZonedDateTime;
 
@@ -7,14 +7,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-/*
- * 골프 코스 
+/**
+ * <pre>
+ * 골프장 코스
+ * </pre>
+ * @author KJY
+ * @since 2023.12.19
  */
 
-@Builder
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class GolfCourse {
 	private Long course_no; // 코스 번호 
 	private Long golf_no; // 골프장 번호 
