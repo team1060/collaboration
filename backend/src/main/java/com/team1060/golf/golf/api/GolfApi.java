@@ -59,7 +59,7 @@ public class GolfApi {
 	}
 	
 	// 골프장 1개 조회 
-	@GetMapping("/golf/{golf_no}")
+	@	("/golf/{golf_no}")
 	public ViewGolf select(@PathVariable(name = "golf_no") Long golf_no) {
 		return golfService.select(golf_no);
 	}

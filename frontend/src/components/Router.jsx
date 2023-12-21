@@ -30,6 +30,7 @@ import Admin from "../Routes/admin/Admin";
 import AdminHeader from "../Routes/admin/AdminHeader";
 import AdminFooter from "../Routes/admin/AdminFooter";
 import AdminMember from "../Routes/admin/AdminMember";
+import Infoinner from "../Routes/Home/Page/Infoinner";
 
 // 공통 레이아웃 컴포넌트
 const MainLayout = ({ children }) => (
