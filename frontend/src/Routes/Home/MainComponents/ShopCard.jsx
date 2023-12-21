@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 
 import '../style/ShopCard.scss'
-import SendIcon from '@mui/icons-material/Send'; //버튼 아이콘 더보기버튼
+import SendIcon from '@mui/icons-material/Send';
 
 import ShopPro from '../data/Shop.json';
 import { Button } from '@mui/material';
@@ -43,11 +43,11 @@ const sortedProducts = ShopPro.sort((a, b) => {
     <div>
       
       <div className='ShopCard'>
-       <h1>골프 인기상품 </h1>
+       <h2>골프 인기상품 </h2>
        <h2>기간한정특가</h2>
        <a href="/">
         <Button variant="contained" endIcon={<SendIcon />}>
-          상품 더보기
+          Send
         </Button>
         </a>
       </div>

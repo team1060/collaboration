@@ -4,7 +4,8 @@ import GolfCourseSection from './MainComponents/GolfCourseSection';
 import MainCard from './MainComponents/MainCard'
 
 import ShopCard from './MainComponents/ShopCard';
-
+import BannerManagement from './MainComponents/BannerManagement';
+import Banner from '../../components/Banner';
 import './style/Home.scss'
 // import { Button } from '@mui/material';s
 // 사이트 메인페이지 
@@ -24,9 +25,10 @@ function HomeList() {
       {/* 골프소개  */}
       <MainCard/>
       <ShopCard/>
-      <div style={{width:"100%"}}>
+      <Banner/>
+      <BannerManagement/>
 
-      </div>
+
     </div>
     {/* <Button color='primary'></Button> */}
     <a href="/golf/intro" style={{color:"black"}}>골프소개페이지입니다</a>
