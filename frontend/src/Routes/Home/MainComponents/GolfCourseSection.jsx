@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import coursesData from '../data/golf.json'; // golf.json 경로 확인 필요
 
+
 const GolfCourseCard = ({ course }) => {
   return (
 
