@@ -105,3 +105,7 @@ npm uninstall react-calendar --save
 
 ### 엑시우스  json 데이트 가져오기 
 npm install axios
+### 드레그앤드랍 
+npm install axios react-dropzone
+### 얼럿 창
+npm install --save react-toastify
