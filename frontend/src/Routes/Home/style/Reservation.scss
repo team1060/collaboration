@@ -76,3 +76,48 @@
 .MuiPickersLayout-actionBar {
     display: none !important;
 }
+
+.butcenter{
+    display: flex;
+    justify-content: space-around;
+}
+
+// 버튼
+.button2{
+    width: 180px;
+}
+// 골프장 선택 글씨 
+.golf {
+
+    margin-bottom: 20px;
+}
+
+.golfparent{
+    display: flex;
+    justify-content: center;
+}
+// 버튼 영역
+.butparent {
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
+// 버튼 액티브 
+.button2.active {
+    background-color: #01387f;
+    color: white; /* 텍스트 색상을 흰색 등으로 변경 */
+  }
+
+  .button2.active:hover {
+    background-color: #01387f !important;
+    color: white !important;
+  }
+
+  // 코스 
+  .parenttable{
+    // width: 1000px;
+  }
+
+  .table {
+    white-space: normal;
+  }

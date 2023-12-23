@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,12 +44,14 @@ public class GolfApi {
 	
 	// 골프장 전체조회 
 	@GetMapping("/golf")
+	@CrossOrigin
 	public List<ViewGolf> selectAll() {
 		return golfService.selectAll();
 	}
 	
 	// 골프장 등록 
 	@PostMapping("/golf")
+	@CrossOrigin
 	public ResponseEntity<String> registerGolf(@RequestBody RegisterAndModifyGolf request){
 		try {
 			golfService.register(request);
@@ -59,13 +62,15 @@ public class GolfApi {
 	}
 	
 	// 골프장 1개 조회 
-	@	("/golf/{golf_no}")
+	@GetMapping("/golf/{golf_no}")
+	@CrossOrigin
 	public ViewGolf select(@PathVariable(name = "golf_no") Long golf_no) {
 		return golfService.select(golf_no);
 	}
 	
 	// 골프장 1개 수정 
 	@PutMapping("/golf/{golf_no}")
+	@CrossOrigin
 	public ResponseEntity<String> modifyGolf(@RequestBody RegisterAndModifyGolf request){
 		try {
 			golfService.modifyGolf(request);
@@ -80,12 +85,14 @@ public class GolfApi {
 	 * @PathVariable이 16진수로 자동으로 변환해줌 
 	 */
 	@GetMapping("/golf/info/{region}")
+	@CrossOrigin
 	public List<ViewGolf> selectRegion(@PathVariable(name = "region") String region){
 		return golfService.selectRegion(region);
 	}
 	
 	// 골프장 삭제 
 	@DeleteMapping("golf/info/{golf_no}")
+	@CrossOrigin
 	public ResponseEntity<String> removeGolf(@PathVariable(name = "golf_no") Long golf_no){
 		try {
 			golfService.removeGolf(golf_no);

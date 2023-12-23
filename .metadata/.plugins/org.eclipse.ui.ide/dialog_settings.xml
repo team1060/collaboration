@@ -79,4 +79,13 @@
 		<item value="org.tigris.subversion.subclipse.graph.feature:4.2.0.1"/>
 		<item value="org.tigris.subversion.subclipse:4.3.4.202306191346"/>
 	</list>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/kimjeong-yeon/Desktop/final/collaboration/backend"/>
+		</list>
+	</section>
 </section>

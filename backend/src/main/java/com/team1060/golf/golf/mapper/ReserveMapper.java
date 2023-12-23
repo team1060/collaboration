@@ -11,25 +11,18 @@ import com.team1060.golf.golf.api.response.ViewCourse;
 
 /**
  * <pre>
- * 코스 CRUD
+ * 예약 
  * </pre>
  * @author KJY
- * @since 2023.12.20
+ * @since 2023.12.23
  */
 
 @Mapper
-public interface CourseMapper {
+public interface ReserveMapper {
 	
-	// 코스등록
-	int insert(RegisterAndModifyCourse course);
+	// 골프장 이름 + 골프장 날짜 별 조회 
+	List<ViewCourse> getGolfNameList(@Param("golf_no")Long golf_no, @Param("golf_date") LocalDate golf_date);
+	
 	// 코스 전체 조회 
 	List<ViewCourse> getList();
-	// 코스1개조회
-	ViewCourse select(Long course_no);
-	// 골프장별 코스 조회 
-	List<ViewCourse> getGolfList(Long golf_no);
-	// 코스 수정 
-	int update(RegisterAndModifyCourse course);
-	// 코스 삭제 
-	int delete(Long course_no);
 }
