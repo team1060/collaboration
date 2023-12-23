@@ -43,5 +43,11 @@
 		parameterType="com.team1060.golf.golf.api.response.ViewCourse">
 		select * from tbl_g_course where golf_no = #{golf_no}
 	</select>
-
+	
+	<!-- 골프장 이름 + 날짜별 조회  -->
+	<select id="getGolfNameList" resultType="com.team1060.golf.golf.api.response.ViewCourse">
+		select * from tbl_g_course 
+		where name = #{name}
+     	and golf_date = #{golf_date}
+	</select>
 </mapper>

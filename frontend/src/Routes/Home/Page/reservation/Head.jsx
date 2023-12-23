@@ -1,5 +1,4 @@
 import { Container,  Grid } from '@mui/material';
-import '../../style/Reservation.scss'
 
 function Head() {
   return (
