@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class ViewCourse {
 	private Long course_no; // 코스 번호
 	private Long golf_no; // 골프장 번호
@@ -27,4 +28,5 @@ public class ViewCourse {
 	private int greenpee; // 그린피
 	private LocalTime golf_time; // 코스 시간
 	private LocalDate golf_date; // 코스 날짜
+	private int golf_status; // 예약상태 
 }

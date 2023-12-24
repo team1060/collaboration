@@ -23,8 +23,6 @@ function Reservation() {
     console.log(plus+golf);
   }
 
-  // useEffect로 골프장 버튼이 바뀔 때 코스 값 바뀌게 하기 
-
   return (
     <>
       <Head />

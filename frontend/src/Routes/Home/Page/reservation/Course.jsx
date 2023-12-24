@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,9 +6,9 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { useEffect, useState } from "react";
-import { getCourse } from "../../api/apiReserve";
 import { Button, Container } from "@mui/material";
+import { getCourse } from "../../api/apiReserve";
+import { postGolf } from '../../api/apiReserve';
 
 const columns = [
   { id: 'id', label: 'NO', align: 'center' },
@@ -19,21 +19,24 @@ const columns = [
   { id: 'actions', label: '예약', align: 'center' },
 ];
 
-const Course = ({ golf }) => {
+const Course = ({ golf, index, view }) => {
   const [courseList, setCourseList] = useState([]);
 
+  // golf_status가 1 인 리스트만 조회
   useEffect(() => {
     const fetchData = async () => {
       try {
         const courseData = await getCourse();
-        setCourseList(courseData);
+        const golfStatus = courseData.filter(course => course.golf_status === 1 && course.golf_date === view && course.golf_no === index);
+        setCourseList(golfStatus);
       } catch (error) {
-        // 오류 처리
+        console.error(error);
       }
     };
     fetchData();
-  }, [golf]);
+  }, [golf, view, index]);
 
+  // 시간 설정 
   const formatTime = (time) => {
     const date = new Date(`2000-01-01T${time}`);
     const hours = date.getHours().toString().padStart(2, '0');
@@ -41,10 +44,32 @@ const Course = ({ golf }) => {
     return `${hours}:${minutes}`;
   };
 
-  const handleButtonClick = (course) => {
-    console.log(course);
-  };
+// 예약 신청 
+const handleButtonClick = async (course) => {
+  try {
+    const email = 'jungyeon@test'; // 회원가입 완료 후 추가 예정 
+    const plusData = { ...course, email };
+    
+    // 예약 신청 alert
+    const userCheck = window.confirm(`
+    예약정보를 확인해주세요 
+    [예약날짜] ${course.golf_date} 
+    [예약시간] ${formatTime(course.golf_time)} 
+    [코스이름] ${course.course_name} 
+    예약하시겠습니까?`);
 
+    if (userCheck) {
+      await postGolf(plusData);
+      alert('예약이 완료되었습니다.');
+    } else {
+      alert('예약이 취소되었습니다.');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+  // 코스 테이블 이름 
   const rows = courseList.map((course, index) => ({
     id: index + 1,
     course_name: course.course_name,
@@ -56,13 +81,12 @@ const Course = ({ golf }) => {
 
   return (
     <Container>
-
-<div className="parent">
-          <div className='internet'>
-            <h2>코스</h2>
-            <br />
-          </div>
+      <div className="parent">
+        <div className='internet'>
+          <h2>코스</h2>
+          <br />
         </div>
+      </div>
 
       <Paper>
         <TableContainer sx={{ maxHeight: 700 }}>

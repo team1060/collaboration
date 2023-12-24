@@ -31,7 +31,8 @@
 		greenpee=#{greenpee}, golf_time=#{golf_time}, golf_date=#{golf_date}
 		WHERE course_no=#{course_no}
 	</update>
-
+	
+	
 	<!-- 코스 삭제 -->
 	<delete id="delete" parameterType="Long">
 		DELETE FROM tbl_g_course WHERE

@@ -17,7 +17,7 @@ public class GolfReserve {
 	private Long course_no; // 코스번호 
 	private String email; // 이메일 
 	private int golf_no; // 골프장 번호 
-	private ZonedDateTime reserve_time; // 예약 완료시간 
+	private ZonedDateTime reserve_time; // 예약 완료 날짜 시간 
 	private LocalTime time; // 예약시간 
 	private LocalDate date; // 예약날짜 
 	private int golf_status; // 예약 상태 (0)완료, (1)취소
