@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Param;
 import com.team1060.golf.golf.api.request.RegisterAndModifyReserve;
 import com.team1060.golf.golf.api.request.RegisterAndModifyCourse;
 import com.team1060.golf.golf.api.response.ViewCourse;
+import com.team1060.golf.golf.api.response.ViewGolf;
 
 /**
  * <pre>
@@ -27,10 +28,12 @@ public interface ReserveMapper {
 	// 골프장 예약 
 	int insert(RegisterAndModifyReserve golf);
 
+	// 코스1개조회
+	ViewCourse select(Long course_no);
+    
 	// status 수정 
 	int modify(RegisterAndModifyReserve golf);
 	
 	// 골프장 예약 취소 
-	
 	
 }

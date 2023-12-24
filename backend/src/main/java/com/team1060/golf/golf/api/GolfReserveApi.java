@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.team1060.golf.golf.api.request.RegisterAndModifyReserve;
@@ -20,6 +22,8 @@ import com.team1060.golf.golf.service.CourseService;
 import com.team1060.golf.golf.service.ReserveService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 
 /**
  * <pre>
@@ -29,6 +33,7 @@ import lombok.RequiredArgsConstructor;
  * @since 2023.12.23
  */
 
+@Log4j2
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/reserve")
@@ -43,27 +48,28 @@ public class GolfReserveApi {
 	public List<ViewCourse> selectAll() {
 		return reserveService.selectAllCourse();
 	}
-	
+	// @RequestParam Long course_no
 	// 골프장 예약 신청 
 	@PostMapping("/course")
 	@CrossOrigin
-	public ResponseEntity<String> reserveGolf(@RequestBody RegisterAndModifyReserve golf){
-		try {
-			reserveService.reserveGolf(golf);
-			
-			RegisterAndModifyReserve reserveData = RegisterAndModifyReserve.builder()
-					.course_no(golf.getCourse_no())
-					.course_name(golf.getCourse_name())
-					.golf_no(golf.getGolf_no())
-					.golf_date(golf.getGolf_date())
-					.golf_time(golf.getGolf_time())
-					.greenpee(golf.getGreenpee())
-					.golf_status(0).build();
-			reserveService.modifyCourse(reserveData);
-			return ResponseEntity.ok(golf+"예약완료");
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("골프장 등록 실패");
-		}
+	@Transactional
+	public ResponseEntity<?> reserveGolf(
+	        @RequestBody RegisterAndModifyReserve golf
+	        ) {
+	    try {
+	        // 예약 서비스 호출 및 로깅 등을 수행
+	        reserveService.reserveGolf(golf);
+	        log.info("예약 완료 ");
+	        log.info("11"+golf);
+	        golf.setGolf_status(0);
+	        reserveService.modifyCourse(golf);
+	        return ResponseEntity.ok(golf + " 예약 완료");
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("골프장 예약 실패");
+	    }
 	}
+	
+	
 	
 }

@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * <pre>
@@ -18,9 +20,11 @@ import lombok.NoArgsConstructor;
  */
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class RegisterAndModifyReserve {
 	private Long reserve_no; // 예약 번호 
 	private Long course_no; // 코스번호 
