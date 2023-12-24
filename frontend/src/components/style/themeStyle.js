@@ -1,11 +1,11 @@
 export const $primaryColor = "#01387F"; // 기본 기본 글꼴 색상
 export const $redColor = "#ff0000"; // 빨간색 색상
-export const $mainfontColor = "1D1D1B"; // 기본 글씨 색상
+export const $mainfontColor = "#1D1D1B"; // 기본 글씨 색상
 export const $modalColor = "#262626"; // 모달 배경 색상
 export const $grayText = "#666666"; // 회색 텍스트 색상
 export const $calendarBackground = "#4C4C4C"; // 달력 배경 색상
-export const $cartDescriptionBackground = "#4C4C4C"; // 장바구니 설명란 배경 색상
-export const $priceCalculationBackground = "#01387F"; // 가격 계산 배경 색상
+export const $skyblueBackground = "#4C4C4C"; // 장바구니 설명란 배경 색상
+export const $grayBackground = "#01387F"; // 가격 계산 배경 색상
 export const $hoverColor = "#2D2D2B"; // 호버 시 색상
 export const $whiteColor = "#ffffff";// 기본 흰색
 

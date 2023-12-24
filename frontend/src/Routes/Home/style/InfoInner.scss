@@ -1,0 +1,34 @@
+@import "../../../components/style/themeStyle.scss";
+
+#infoInner {
+    .tit {
+        margin-bottom: 30px;
+        h2 {    
+            span {
+                margin-left: 10px;
+                font-size: $subTitle;
+            }
+        }
+    }
+    .golfImage {
+        width: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .golfCont {
+        padding: 1em;      
+        background: $skyblueBackground;
+        min-height: 200px;
+        justify-content: center;
+        display: flex;
+        align-items: start;
+        .tit {
+            margin-bottom: 20px;
+        }
+    }
+}
