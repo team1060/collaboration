@@ -33,3 +33,13 @@ export const getGolf = async () => {
         throw error;
     }
 }
+
+// 예약 신청 
+export const postGolf = async (course) => {
+    try {
+        const response = await axiosInstance.post("/reserve/course", course);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}

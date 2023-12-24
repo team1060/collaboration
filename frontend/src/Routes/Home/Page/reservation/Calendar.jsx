@@ -124,25 +124,27 @@ export default function StaticDualCalendars({ parentView,parentGolf }) {
       </div>
 
         {/* 골프장 버튼 */}
-        <div className="calen2">
-        <div className="calen">
-          
-      <Grid container spacing={3}>
-        {golfName.map((golf, i) => (
-          <Grid item key={i}>
-            <Button
-              className={`button2 ${activeButton === golf.name ? 'active' : ''}`}
-              variant="outlined"
-              size="large"
-              onClick={() => handleButtonClick(golf.name, i)}
-            >
-              {golf.name}
-            </Button>
-          </Grid>
-        ))}
-      </Grid>
-          </div>
-          </div>
+        <div className="calparent">
+          <div className="calen2">
+          <div className="calen">
+            
+                <Grid container spacing={3}>
+          {golfName.map((golf, i) => (
+            <Grid item key={i}>
+              <Button
+                className={`button2 ${activeButton === golf.name ? 'active' : ''}`}
+                variant="outlined"
+                size="large"
+                onClick={() => handleButtonClick(golf.name, i)}
+              >
+                {golf.name}
+              </Button>
+            </Grid>
+          ))}
+                </Grid>
+            </div>
+            </div>
+        </div>
     </Container>
 
   );

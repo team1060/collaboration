@@ -28,4 +28,5 @@ public class RegisterAndModifyCourse {
 	private int greenpee; // 그린피 
 	private LocalTime golf_time; // 코스 시간 
 	private LocalDate golf_date; // 코스 날짜 
+	private int golf_status;
 }

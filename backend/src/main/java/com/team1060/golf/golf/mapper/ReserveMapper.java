@@ -6,8 +6,10 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import com.team1060.golf.golf.api.request.RegisterAndModifyReserve;
 import com.team1060.golf.golf.api.request.RegisterAndModifyCourse;
 import com.team1060.golf.golf.api.response.ViewCourse;
+import com.team1060.golf.golf.api.response.ViewGolf;
 
 /**
  * <pre>
@@ -20,9 +22,18 @@ import com.team1060.golf.golf.api.response.ViewCourse;
 @Mapper
 public interface ReserveMapper {
 	
-	// 골프장 이름 + 골프장 날짜 별 조회 
-	List<ViewCourse> getGolfNameList(@Param("golf_no")Long golf_no, @Param("golf_date") LocalDate golf_date);
-	
 	// 코스 전체 조회 
 	List<ViewCourse> getList();
+	
+	// 골프장 예약 
+	int insert(RegisterAndModifyReserve golf);
+
+	// 코스1개조회
+	ViewCourse select(Long course_no);
+    
+	// status 수정 
+	int modify(RegisterAndModifyReserve golf);
+	
+	// 골프장 예약 취소 
+	
 }

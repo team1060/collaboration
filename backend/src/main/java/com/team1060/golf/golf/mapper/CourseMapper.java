@@ -30,6 +30,8 @@ public interface CourseMapper {
 	List<ViewCourse> getGolfList(Long golf_no);
 	// 코스 수정 
 	int update(RegisterAndModifyCourse course);
+	// 코스 상태 1개 수정 
+	int updateCourse(int golf_status);
 	// 코스 삭제 
 	int delete(Long course_no);
 }
