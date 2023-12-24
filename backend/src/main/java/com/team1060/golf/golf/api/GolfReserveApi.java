@@ -48,7 +48,6 @@ public class GolfReserveApi {
 	public List<ViewCourse> selectAll() {
 		return reserveService.selectAllCourse();
 	}
-	// @RequestParam Long course_no
 	// 골프장 예약 신청 
 	@PostMapping("/course")
 	@CrossOrigin

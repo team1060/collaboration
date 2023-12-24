@@ -28,6 +28,10 @@ function Reservation() {
       <Head />
       <Calendar parentView={parentView} parentGolf={parentGolf}/>
       <Course golf={golf} view={view} index={index}/>
+      {/* <div style={{color: '$redColor'}}>
+        테스트
+      </div> */}
+
     </>
   )
 }

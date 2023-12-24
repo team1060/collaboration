@@ -6,9 +6,10 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { Button, Container } from "@mui/material";
+import { Button, Container, styled } from "@mui/material";
 import { getCourse } from "../../api/apiReserve";
 import { postGolf } from '../../api/apiReserve';
+import { tableCellClasses } from '@mui/material/TableCell';
 
 const columns = [
   { id: 'id', label: 'NO', align: 'center' },
@@ -18,6 +19,14 @@ const columns = [
   { id: 'golf_time', label: '시간', align: 'center' },
   { id: 'actions', label: '예약', align: 'center' },
 ];
+
+// 컬러 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: '#01387f',
+    color: theme.palette.common.white,
+  },
+}));
 
 const Course = ({ golf, index, view }) => {
   const [courseList, setCourseList] = useState([]);
@@ -91,16 +100,16 @@ const handleButtonClick = async (course) => {
       <Paper>
         <TableContainer sx={{ maxHeight: 700 }}>
           <Table stickyHeader aria-label="sticky table">
-            <TableHead>
+            <TableHead >
               <TableRow>
                 {columns.map((column) => (
-                  <TableCell
+                  <StyledTableCell
                     key={column.id}
                     align={column.align}
                     style={{ minWidth: column.minWidth }}
                   >
                     {column.label}
-                  </TableCell>
+                  </StyledTableCell>
                 ))}
               </TableRow>
             </TableHead>
