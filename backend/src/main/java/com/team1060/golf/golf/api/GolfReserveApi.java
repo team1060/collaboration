@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.team1060.golf.golf.api.request.RegisterAndModifyReserve;
 import com.team1060.golf.golf.api.response.ViewCourse;
 import com.team1060.golf.golf.api.response.ViewGolf;
+import com.team1060.golf.golf.api.response.ViewReserve;
 import com.team1060.golf.golf.service.CourseService;
 import com.team1060.golf.golf.service.ReserveService;
 
@@ -36,20 +37,21 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/reserve")
+@RequestMapping("/api")
+@CrossOrigin
 public class GolfReserveApi {
 
 	private final ReserveService reserveService;
 	
 	
 	// 코스 전체 조회
-	@GetMapping("/course")
+	@GetMapping("/reservation")
 	@CrossOrigin
 	public List<ViewCourse> selectAll() {
 		return reserveService.selectAllCourse();
 	}
 	// 골프장 예약 신청 
-	@PostMapping("/course")
+	@PostMapping("/reservation")
 	@CrossOrigin
 	@Transactional
 	public ResponseEntity<?> reserveGolf(
@@ -58,8 +60,6 @@ public class GolfReserveApi {
 	    try {
 	        // 예약 서비스 호출 및 로깅 등을 수행
 	        reserveService.reserveGolf(golf);
-	        log.info("예약 완료 ");
-	        log.info("11"+golf);
 	        golf.setGolf_status(0);
 	        reserveService.modifyCourse(golf);
 	        return ResponseEntity.ok(golf + " 예약 완료");
@@ -67,6 +67,14 @@ public class GolfReserveApi {
 	    	e.printStackTrace();
 	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("골프장 예약 실패");
 	    }
+	}
+	
+	// 아이디별 예약 내역조회 
+	@GetMapping("/{email}")
+	@CrossOrigin
+	public List<ViewReserve> selectEmail(@PathVariable(name ="email") String email) {
+		
+		return reserveService.selectEmail(email);
 	}
 	
 	

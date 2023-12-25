@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,18 +47,21 @@ public class CourseApi {
 
 	// 코스 전체 조회
 	@GetMapping("/course")
+	@CrossOrigin
 	public List<ViewCourse> selectAll() {
 		return courseService.selectAll();
 	}
 
 	// 코스 1개 조회
 	@GetMapping("/course/{course_no}")
+	@CrossOrigin
 	public ViewCourse select(@PathVariable(name = "course_no") Long course_no) {
 		return courseService.select(course_no);
 	}
 
 	// 코스 1개 수정
 	@PutMapping("/course/{course_no}")
+	@CrossOrigin
 	public ResponseEntity<String> modifyCourse(@RequestBody RegisterAndModifyCourse course) {
 		try {
 			courseService.modifyCourse(course);
@@ -80,6 +84,7 @@ public class CourseApi {
 	
 	// 골프장별 코스 조회 
 	@GetMapping("/course/golf/{golf_no}")
+	@CrossOrigin
 	public List<ViewCourse> selectGolf(@PathVariable(name = "golf_no") Long golf_no){
 		return courseService.getGolfList(golf_no);
 	}

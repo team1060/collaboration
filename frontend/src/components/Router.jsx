@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import HomeList from "../Routes/Home/Home"; // 메인 홈페이지 
 import EventDetail from "../Routes/Home/Page/EventDetail"; // 골프 
 import Reservation from "../Routes/Home/Page/Reservation"; // 골프 예매 페이지 
+import ReservationDetail from "../Routes/Home/Page/reservation/ReservationDetail";
 import Info from "../Routes/Home/Page/Info";// 골프 목록 페이지 
 
 // 상품
@@ -19,7 +20,7 @@ import Detail from "../Routes/addr/Detail";
 // 마이페이지 
 
 // 로그인 회원가입
-import Member from "../Routes/mart/Member";
+import MemberJoin from './MemberJoin.jsx';
 
 
 
@@ -60,6 +61,8 @@ function Router() {
         />
         {/* 골프장 상세페이지, 골프 예약 */}
         <Route path="/reservation" element={<MainLayout><Reservation /></MainLayout>} />
+        {/* 예약확인 */}
+        <Route path="/reservateion/detail" element={<MainLayout><ReservationDetail /></MainLayout>} />
         <Route path="/golf/info" element={<MainLayout><Info /></MainLayout>} /> 
         <Route path="/golf/infoinner" element={<MainLayout><Infoinner /></MainLayout>} /> 
 
@@ -73,7 +76,8 @@ function Router() {
         <Route path="/addr" element={<MainLayout><Addr/></MainLayout>} />
         <Route path="/detail" element={<MainLayout><Detail/></MainLayout>} />
         {/* 로그인 회원 가입 */}
-        <Route path="/member" element={<MainLayout><Member/></MainLayout>} />
+        <Route path="/member/join" element={<MainLayout><MemberJoin/></MainLayout>} />
+        {/* <Route path="/member" element={<MainLayout><Member/></MainLayout>} /> */}
 
 
 
