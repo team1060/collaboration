@@ -1,34 +1,86 @@
 @import "../../../components/style/themeStyle.scss";
 
 #infoInner {
-    .tit {
+
+    .title {
         margin-bottom: 30px;
-        h2 {    
+
+        h2 {
             span {
                 margin-left: 10px;
-                font-size: $subTitle;
+                font-size: $title2;
             }
         }
     }
-    .golfImage {
-        width: 100%;
 
-        img {
+    .golfSec1 {
+        margin-bottom: 10px;
+
+        .golfImage {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .golfCont {
+            padding: 1em;
+            background: $skyblueBackground;
+            min-height: 200px;
+            justify-content: center;
+            display: flex;
+            align-items: start;
+
+            .tit {
+                margin-bottom: 20px;
+            }
         }
     }
 
-    .golfCont {
-        padding: 1em;      
-        background: $skyblueBackground;
-        min-height: 200px;
-        justify-content: center;
+    .reserve {
+        margin-bottom: 40px;
         display: flex;
-        align-items: start;
-        .tit {
-            margin-bottom: 20px;
+        justify-content: flex-end;
+        /* 우측 정렬 */
+    }
+
+    .golfSec2 {
+        min-height: 400px;
+    }
+
+    .Sec2Inner {
+        margin-bottom: 40px;
+    }
+
+    .golfSec2Inner{
+
+        margin-bottom: 20px;
+    }
+
+    .tcourses,
+    .tholes,
+    .tpars,
+    .tscores {
+        text-align: center;
+    }
+    
+    .rating {
+        background: $skyblueBackground;
+        padding: 20px 0;
+
+        .ratingInner {
+            padding: 10px 30px;
+            
         }
     }
+    .directionsInner {
+        padding: 20px 0;
+        .locationEmo,.callEmo,.printEmo {
+            padding-right: 30px;
+        }
+    }
+
 }
