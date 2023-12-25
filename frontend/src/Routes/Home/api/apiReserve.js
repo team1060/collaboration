@@ -16,7 +16,7 @@ const axiosInstance = axios.create({
 // 코스 전체조회
 export const getCourse = async () => {
     try{
-        const response = await axiosInstance.get("reserve/course");
+        const response = await axiosInstance.get("/reservation");
         return response.data;
     } catch (error) {
         throw error;
@@ -37,7 +37,17 @@ export const getGolf = async () => {
 // 예약 신청 
 export const postGolf = async (course) => {
     try {
-        const response = await axiosInstance.post("/reserve/course", course);
+        const response = await axiosInstance.post("/reservation", course);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+}
+
+// 예약 내역 불러오기 
+export const getReserve = async (email) => {
+    try {
+        const response = await axiosInstance.get(`/reservation/${email}`);
         return response.data;
     } catch (error) {
         throw error;

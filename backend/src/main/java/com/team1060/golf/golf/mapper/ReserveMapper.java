@@ -10,6 +10,7 @@ import com.team1060.golf.golf.api.request.RegisterAndModifyReserve;
 import com.team1060.golf.golf.api.request.RegisterAndModifyCourse;
 import com.team1060.golf.golf.api.response.ViewCourse;
 import com.team1060.golf.golf.api.response.ViewGolf;
+import com.team1060.golf.golf.api.response.ViewReserve;
 
 /**
  * <pre>
@@ -33,6 +34,9 @@ public interface ReserveMapper {
     
 	// status 수정 
 	int modify(RegisterAndModifyReserve golf);
+	
+	// 예약내역 
+	List<ViewReserve> selectEmail(String email);
 	
 	// 골프장 예약 취소 
 	

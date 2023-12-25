@@ -71,7 +71,7 @@ const handleButtonClick = async (course) => {
       await postGolf(plusData);
       alert('예약이 완료되었습니다.');
     } else {
-      alert('예약이 취소되었습니다.');
+      alert('예약신청이 취소되었습니다.');
     }
   } catch (error) {
     console.error(error);

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.team1060.golf.golf.api.request.RegisterAndModifyReserve;
 import com.team1060.golf.golf.api.response.ViewCourse;
+import com.team1060.golf.golf.api.response.ViewReserve;
 import com.team1060.golf.golf.mapper.ReserveMapper;
 
 import lombok.RequiredArgsConstructor;
@@ -41,5 +42,10 @@ public class ReserveService {
 	public int modifyCourse(RegisterAndModifyReserve golf) {
 		log.info(golf);
 		return reserveMapper.modify(golf);
+	}
+	
+	// 아이디별 예약 내역 조회 
+	public List<ViewReserve> selectEmail(String email){
+		return reserveMapper.selectEmail(email);
 	}
 }
