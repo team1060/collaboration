@@ -4,7 +4,7 @@ import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { Button, Container } from '@mui/material';
-import { getGolf } from '../../api/apiReserve';
+import { getGolf } from '../../../services/golf/apiReserve';
 
 export default function StaticDualCalendars({ parentView,parentGolf }) {
   const today = new Date();

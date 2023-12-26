@@ -7,8 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Button, Container, styled } from "@mui/material";
-import { getCourse } from "../../api/apiReserve";
-import { postGolf } from '../../api/apiReserve';
+import { getCourse } from '../../../services/golf/apiReserve';
+import { postGolf } from '../../../services/golf/apiReserve';
 import { tableCellClasses } from '@mui/material/TableCell';
 
 const columns = [

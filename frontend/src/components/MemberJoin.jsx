@@ -12,6 +12,7 @@ import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import { Container, Typography, Grid, Button, ListItem } from '@mui/material';
+import JoinData from './data/JoinData.js';
 import MemberData from './data/MemberData.js';
 import '../components/style/MemberJoin.scss';
 
@@ -38,148 +39,35 @@ function MemberJoin() {
 
   const children = (
     <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3, marginBottom: '10px' }}>
-      <Grid container>
-        <FormControlLabel
-        style={{width: '380px'}}
-          label="[필수] 골프의 민족 이용 약관"
-          control={<Checkbox checked={checked[0]} onChange={handleChange(0)} />}
-        />
-        
-          <div className="butstyle">
-            <ListItemButton onClick={() => handleClick(0)} style={{ justifyContent: 'end'}}>
-              {open[0] ? <ExpandLess/> : <ExpandMore />}
-            </ListItemButton>
-          </div>
+      {JoinData.map((JoinData, index) => (
+        <React.Fragment key={index}>
+          <Grid container>
+            <FormControlLabel
+              style={{ width: '360px' }}
+              label={JoinData.label}
+              control={<Checkbox checked={checked[index]} onChange={handleChange(index)} />}
+            />
 
-      </Grid>
-      <List
-  sx={{ width: '100%', bgcolor: 'background.paper' }}
-  component="nav"
-  aria-labelledby="nested-list-subheader"
->
-  <Collapse in={open[0]} timeout="auto" unmountOnExit>
-    <List component="div" disablePadding>
-      <ListItem style={{ width: '400px', overflowY: 'auto' , height:'200px', border: '1px solid #000'}}>
-        <ListItemText primary="골프장이용 표준약관
-          제 1 장 총칙
-          1 조 (목적)
-          본 약관은 더크로스비 골프클럽(이하 ‘클럽’이라 한다.)와 클럽의 시설을 이용하는 모든 이용자의 시설물 이용에 관한 사항을 규정함을 목적으로 한다.
+            <div className="butstyle">
+              <ListItemButton onClick={() => handleClick(index)} style={{ justifyContent: 'end' }}>
+                {open[index] ? <ExpandLess /> : <ExpandMore />}
+              </ListItemButton>
+            </div>
+          </Grid>
 
-          제 2 조 (준수 의무)
-          본 클럽에 내장하는 모든 이용자는 본연의 목적이 명랑하고 질서있게 이루어 질 수 있도록 하기 위하여 반드시 본 약관을 준수하여야 한다.
-
-          제 3 조 (약관의 성립 및 효력)
-          본 약관의 모든 이용자가 볼 수 있도록 프론트에 게시하며 이용자는 프론트에서 입장절차를 마침과 동시에 본 약관을 동의한 것으로 하여 효력이 발생한다." />
-      </ListItem>
-    </List>
-  </Collapse>
-</List>
-
-      <Grid container>
-        <FormControlLabel
-        style={{width: '380px'}}
-          label="[필수] 개인정보 수집 및 활용"
-          control={<Checkbox checked={checked[1]} onChange={handleChange(1)} />}
-        />
-        <div className="butstyle">
-          <ListItemButton onClick={() => handleClick(1)}style={{ justifyContent: 'end'}}>
-            {open[1] ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          </div>
-      </Grid>
-      <List
-        sx={{ width: '100%', bgcolor: 'background.paper' }}
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-      >
-        <Collapse in={open[1]} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-          <ListItem style={{ width: '400px', overflowY: 'auto' , height:'200px', border: '1px solid #000'}}>
-        <ListItemText primary="골프장이용 표준약관
-          제 1 장 총칙
-          1 조 (목적)
-          본 약관은 더크로스비 골프클럽(이하 ‘클럽’이라 한다.)와 클럽의 시설을 이용하는 모든 이용자의 시설물 이용에 관한 사항을 규정함을 목적으로 한다.
-
-          제 2 조 (준수 의무)
-          본 클럽에 내장하는 모든 이용자는 본연의 목적이 명랑하고 질서있게 이루어 질 수 있도록 하기 위하여 반드시 본 약관을 준수하여야 한다.
-
-          제 3 조 (약관의 성립 및 효력)
-          본 약관의 모든 이용자가 볼 수 있도록 프론트에 게시하며 이용자는 프론트에서 입장절차를 마침과 동시에 본 약관을 동의한 것으로 하여 효력이 발생한다." />
-      </ListItem>
+          <List sx={{ width: '100%', bgcolor: 'background.paper' }} component="nav">
+            <Collapse in={open[index]} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem style={{ width: '400px', overflowY: 'auto', height: '200px', border: '1px solid #000' }}>
+                  <ListItemText primary={JoinData.text} />
+                </ListItem>
+              </List>
+            </Collapse>
           </List>
-        </Collapse>
-      </List>
-
-      <Grid container>
-        <FormControlLabel
-        style={{width: '380px'}}
-          label="[선택] 마케팅 및 광고 목적 활용"
-          control={<Checkbox checked={checked[2]} onChange={handleChange(2)} />}
-        />
-        <div className="butstyle">
-          <ListItemButton onClick={() => handleClick(2)} style={{justifyContent: 'end'}}>
-            {open[2] ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          </div>
-      </Grid>
-      <List
-        sx={{ width: '100%', bgcolor: 'background.paper' }}
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-      >
-        <Collapse in={open[2]} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-          <ListItem style={{ width: '400px', overflowY: 'auto' , height:'200px', border: '1px solid #000'}}>
-        <ListItemText primary="골프장이용 표준약관
-          제 1 장 총칙
-          1 조 (목적)
-          본 약관은 더크로스비 골프클럽(이하 ‘클럽’이라 한다.)와 클럽의 시설을 이용하는 모든 이용자의 시설물 이용에 관한 사항을 규정함을 목적으로 한다.
-
-          제 2 조 (준수 의무)
-          본 클럽에 내장하는 모든 이용자는 본연의 목적이 명랑하고 질서있게 이루어 질 수 있도록 하기 위하여 반드시 본 약관을 준수하여야 한다.
-
-          제 3 조 (약관의 성립 및 효력)
-          본 약관의 모든 이용자가 볼 수 있도록 프론트에 게시하며 이용자는 프론트에서 입장절차를 마침과 동시에 본 약관을 동의한 것으로 하여 효력이 발생한다." />
-      </ListItem>
-          </List>
-        </Collapse>
-      </List>
-
-      <Grid container>
-        <FormControlLabel
-          style={{width: '380px'}}
-          label="[선택] SNS 문자 수신 동의"
-          control={<Checkbox checked={checked[3]} onChange={handleChange(3)} />}
-        />
-        <div className="butstyle">
-          <ListItemButton onClick={() => handleClick(3)} style={{ justifyContent: 'end'}}>
-            {open[3] ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
-          </div>
-      </Grid>
-      <List
-        sx={{ width: '100%', bgcolor: 'background.paper' }}
-        component="nav"
-        aria-labelledby="nested-list-subheader"
-      >
-        <Collapse in={open[3]} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-          <ListItem style={{ width: '400px', overflowY: 'auto' , height:'200px', border: '1px solid #000'}}>
-        <ListItemText primary="골프장이용 표준약관
-          제 1 장 총칙
-          1 조 (목적)
-          본 약관은 더크로스비 골프클럽(이하 ‘클럽’이라 한다.)와 클럽의 시설을 이용하는 모든 이용자의 시설물 이용에 관한 사항을 규정함을 목적으로 한다.
-
-          제 2 조 (준수 의무)
-          본 클럽에 내장하는 모든 이용자는 본연의 목적이 명랑하고 질서있게 이루어 질 수 있도록 하기 위하여 반드시 본 약관을 준수하여야 한다.
-
-          제 3 조 (약관의 성립 및 효력)
-          본 약관의 모든 이용자가 볼 수 있도록 프론트에 게시하며 이용자는 프론트에서 입장절차를 마침과 동시에 본 약관을 동의한 것으로 하여 효력이 발생한다." />
-      </ListItem>
-          </List>
-        </Collapse>
-      </List>
+        </React.Fragment>
+      ))}
     </Box>
+    
   );
 
   return (
@@ -200,10 +88,10 @@ function MemberJoin() {
           </Grid>
           <Grid item xs={8} lg={7}>
             <TextField
-            
               fullWidth
+              id={item.id}
+              name={item.name}
               placeholder={item.placeholder}
-              id="fullWidth"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
