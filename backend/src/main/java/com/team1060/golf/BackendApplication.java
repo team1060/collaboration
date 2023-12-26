@@ -10,3 +10,10 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 }
+
+
+/**
+ * API swagger
+ * 
+ * http://localhost:8081/swagger-ui/index.html
+ */
