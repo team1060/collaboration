@@ -19,9 +19,6 @@ export default function StaticDualCalendars({ parentView,parentGolf }) {
   // 골프장명 버튼 
   const [golfName, setGolfName] = useState([]);
 
-  // 골프장 이름 부모에게 전달 
-  const [name, setName] = useState('');
-
   // 골프장 버튼 클릭 이벤트 
   const [activeButton, setActiveButton] = useState(null);
   const handleButtonClick = (golfName, index) => {
@@ -31,8 +28,6 @@ export default function StaticDualCalendars({ parentView,parentGolf }) {
     parentGolf(golfName, index)
     
   };
-
-
   // 오늘부터 2주 후
   const twoWeeksLater = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 21);
 
