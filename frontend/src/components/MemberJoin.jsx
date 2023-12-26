@@ -6,6 +6,9 @@ import Box from '@mui/material/Box';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import List from '@mui/material/List';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
@@ -63,6 +66,16 @@ function MemberJoin() {
     const newChecked = [...checked];
     newChecked[index] = event.target.checked;
     setChecked(newChecked);
+  };
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   // 체크박스
@@ -162,20 +175,68 @@ function MemberJoin() {
               fullWidth
               label={'비밀번호'}
               placeholder={'비밀번호를 입력해주세요'}
-              type='password'
+              type={showPassword ? 'text' : 'password'}
               name='password'
-              autoComplete="current-password"  // autocomplete 속성 추가
+              autoComplete="current-password"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
                     <SlideshowIcon />
                   </InputAdornment>
                 ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      edge="end"
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
               }}
             />
           </Grid>
         </Grid>
-        
+
+        <Grid container spacing={3} className="inputfield">
+          <Grid item xs={3} lg={2} className="inputtext">
+            비밀번호확인
+            <span>*</span>
+          </Grid>
+          <Grid item xs={8} lg={7}>
+            <TextField
+              fullWidth
+              label={'비밀번호'}
+              placeholder={'비밀번호를 입력해주세요'}
+              type={showPassword ? 'text' : 'password'}
+              name='password'
+              autoComplete="current-password"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SlideshowIcon />
+                  </InputAdornment>
+                ),
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      edge="end"
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+        </Grid>
+
         <Grid container spacing={3} className="inputfield">
           <Grid item xs={3} lg={2} className="inputtext">
             닉네임
