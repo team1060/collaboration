@@ -1,17 +1,10 @@
 import axios from "axios";
+import axiosInstance from "../axiosInstance.js";
 
 /**
  * 예약페이지 api 모음 
  */
 
-const baseURL = "http://localhost:8081/api"
-
-const axiosInstance = axios.create({
-    baseURL,
-    headers: {
-        "Content-Type": "application/json",
-    },
-});
 
 // 코스 전체조회
 export const getCourse = async () => {
@@ -22,6 +15,7 @@ export const getCourse = async () => {
         throw error;
     }
 }
+
 
 
 // 골프장 이름 조회 

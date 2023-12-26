@@ -3,11 +3,11 @@ import { BrowserRouter, Routes , Route} from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 // 메인
-import HomeList from "../Routes/Home/Home"; // 메인 홈페이지 
-import EventDetail from "../Routes/Home/Page/EventDetail"; // 골프 
-import Reservation from "../Routes/Home/Page/Reservation"; // 골프 예매 페이지 
-import ReservationDetail from "../Routes/Home/Page/reservation/ReservationDetail";
-import Info from "../Routes/Home/Page/Info";// 골프 목록 페이지 
+import HomeList from "../Routes/main/Home"; // 메인 홈페이지 
+import EventDetail from "../Routes/main/Page/EventDetail"; // 골프 
+import Reservation from "../Routes/golf/Reservation.jsx"; // 골프 예매 페이지 
+import ReservationDetail from "../Routes/golf/reservation/ReservationDetail.jsx";
+import Info from "../Routes/golf/Info";// 골프 목록 페이지 
 
 // 상품
 import Shop from "../Routes/shop/Shop"; //상품 메인
@@ -16,22 +16,15 @@ import Product from "../Routes/shop/Product";// 상품 목록
 import Addr from "../Routes/addr/Addr";
 import Detail from "../Routes/addr/Detail";
 // 고객 지원
-
 // 마이페이지 
-
 // 로그인 회원가입
 import MemberJoin from './MemberJoin.jsx';
-
-
-
-
-
 // 관리자 페이지 import 
 import Admin from "../Routes/admin/Admin";
 import AdminHeader from "../Routes/admin/AdminHeader";
 import AdminFooter from "../Routes/admin/AdminFooter";
 import AdminMember from "../Routes/admin/AdminMember";
-import Infoinner from "../Routes/Home/Page/Infoinner";
+import Infoinner from "../Routes/golf/infodetail/Infoinner.jsx";
 
 // 공통 레이아웃 컴포넌트
 const MainLayout = ({ children }) => (

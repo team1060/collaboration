@@ -1,4 +1,4 @@
-import '../style/Reservation.scss'
+import './style/Reservation.scss'
 import Head from "./reservation/Head";
 import Calendar from "./reservation/Calendar";
 import Course from "./reservation/Course";

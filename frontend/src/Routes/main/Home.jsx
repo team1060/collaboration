@@ -4,8 +4,8 @@ import GolfCourseSection from './MainComponents/GolfCourseSection';
 import MainCard from './MainComponents/MainCard'
 
 import ShopCard from './MainComponents/ShopCard';
-import BannerManagement from './MainComponents/BannerManagement';
-import Banner from '../../components/Banner';
+// import BannerManagement from './MainComponents/BannerManagement';
+// import Banner from '../../components/Banner';
 import './style/Home.scss'
 // import { Button } from '@mui/material';s
 // 사이트 메인페이지 
@@ -25,8 +25,8 @@ function HomeList() {
       {/* 골프소개  */}
       <MainCard/>
       <ShopCard/>
-      <Banner/>
-      <BannerManagement/>
+      {/* <Banner/>
+      <BannerManagement/> */}
 
 
     </div>
