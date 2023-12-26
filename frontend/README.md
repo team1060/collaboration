@@ -109,3 +109,6 @@ npm install axios
 npm install axios react-dropzone
 ### 얼럿 창
 npm install --save react-toastify
+
+### mui 이모티콘
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react

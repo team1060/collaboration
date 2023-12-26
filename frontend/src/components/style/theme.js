@@ -72,6 +72,9 @@ const theme = createTheme({
         secondary: {
             main: themeStyle.$redColor // 보조 색상
         },
+        background: {
+            main: themeStyle.$skyblueBackground
+        }
     },
     typography: {
         fontFamily: ['Spoqa Han Sans Neo', 'sans-serif'].join(","),
