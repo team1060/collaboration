@@ -10,7 +10,7 @@ import coursesData from '../data/golf.json'; // golf.json 경로 확인 필요
 const GolfCourseCard = ({ course }) => {
   return (
 
-    <div style={{width:"100%", margin:"0 auto"}}> 
+    <div style={{width:"100%", margin:"0 auto"}} className='GolfCourseCard'> 
       <Card sx={{ display: 'flex', margin: '20px', padding: '10px' }}>
         {/* 이미지 자리 (임시로 색상만 표시) */}
         <CardMedia
