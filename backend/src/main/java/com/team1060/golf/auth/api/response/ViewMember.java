@@ -39,6 +39,7 @@ public class ViewMember {
 	private String gender; // 남자 여자 
 	private String telecom; // 통신사 
 	private byte is_korean; // 내국인1 외국인 0
+	private boolean is_checkedEmail; // 이메일 중복 여부 
 	
 	@Getter
 	@Setter
@@ -46,6 +47,11 @@ public class ViewMember {
 	public static class LoginUser {
 	    private String email;
 	    private String password;
-
+	}
+	@Getter
+	@Setter
+	@NoArgsConstructor
+	public static class CheckedEmial {
+		private boolean is_checkedEmail;
 	}
 }

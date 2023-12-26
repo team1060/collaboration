@@ -70,7 +70,7 @@ public class GolfReserveApi {
 	}
 	
 	// 아이디별 예약 내역조회 
-	@GetMapping("/{email}")
+	@GetMapping("reservation/{email}")
 	@CrossOrigin
 	public List<ViewReserve> selectEmail(@PathVariable(name ="email") String email) {
 		

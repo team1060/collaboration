@@ -254,7 +254,7 @@ function MemberJoin() {
           </div>
         </div>
       </div>
-      <div className="butsec"><Button variant="contained">회원가입</Button></div>
+      <div className="butsec"><Button className='joinbut' variant="contained">회원가입</Button></div>
     </Container>
   );
 }
