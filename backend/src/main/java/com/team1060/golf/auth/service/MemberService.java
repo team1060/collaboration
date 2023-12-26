@@ -11,6 +11,14 @@ import com.team1060.golf.auth.mapper.MemberMapper;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * <pre>
+ * 회원 service
+ * </pre>
+ * @author KJY
+ * @since 2023.12.25
+ */
+
 @Service
 @RequiredArgsConstructor
 public class MemberService {
@@ -23,6 +31,10 @@ public class MemberService {
 	// 로그인 
 	public ViewMember login(LoginUser user) {
 		return memberMapper.login(user);
+	}
+	// email 중복체크
+	public Boolean checkedEmail(String email) {
+		return memberMapper.checkedEmail(email);
 	}
 	// 회원 전체 조회 
 	public List<ViewMember> selectAll(){

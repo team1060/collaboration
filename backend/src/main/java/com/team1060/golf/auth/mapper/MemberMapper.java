@@ -25,6 +25,9 @@ public interface MemberMapper {
 	// 로그인 
 	ViewMember login(LoginUser user);
 	
+	// email 중복 체크 
+	boolean checkedEmail(String email);
+	
 	// 아래는 아직 테스트 안함 
 	
 	// 회원 전체 조회 
