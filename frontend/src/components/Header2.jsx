@@ -159,10 +159,13 @@ export default function PersistentDrawerLeft() {
                 aria-label="open drawer"
                 onClick={handleDrawerOpen}
                 edge="start"
-                sx={{ mr: 2, ...(open && { display: 'none' }) }}
+                sx={{ mr: 2, ...(open && { display: 'none' }) }}      
+                
               >
                 <MenuIcon />
               </IconButton>
+
+           
               <Typography variant="h6" noWrap component="div">
                 메인 메뉴
               </Typography>

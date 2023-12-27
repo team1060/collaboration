@@ -57,7 +57,7 @@ function Router() {
         {/* 예약확인 */}
         <Route path="/reservateion/detail" element={<MainLayout><ReservationDetail /></MainLayout>} />
         <Route path="/golf/info" element={<MainLayout><Info /></MainLayout>} /> 
-        <Route path="/golf/infoinner" element={<MainLayout><Infoinner /></MainLayout>} /> 
+        <Route path="/golf/info/:golf_no" element={<MainLayout><Infoinner /></MainLayout>} /> 
 
         {/* 골프장 예매 상세페이지 */}
 

@@ -12,11 +12,11 @@ export const $whiteColor = "#ffffff";// 기본 흰색
 export const $fontSize = "16px"; // 기본 폰트사이즈
 
 export const $headline1 = "34px"; //h1
-export const $headline2 = "24px"; //h2
-export const $headline3 = "20px"; //h3
+export const $headline2 = "27px"; //h2
+export const $headline3 = "22px"; //h3
 export const $menuTitle = "16px"; //.menu
 export const $subTitle = "13px"; //.sub
-export const $title1 = "16px"; //.tit
+export const $title1 = "18px"; //.tit
 export const $title2 = "14px"; //.thead
 export const $body1 = $fontSize; //.기본 폰트사이즈
 export const $body2 = "14px"; //.tbody
