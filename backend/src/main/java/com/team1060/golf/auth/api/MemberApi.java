@@ -25,7 +25,7 @@ import lombok.extern.log4j.Log4j2;
  * 회원 api
  * </pre>
  * 
- * @author KJY
+ * @author KJY 
  * @since 2023.12.25
  */
 

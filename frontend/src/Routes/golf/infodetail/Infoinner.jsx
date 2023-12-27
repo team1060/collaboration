@@ -56,8 +56,8 @@ function Infoinner() {
                     </div>
                 </Grid>
                 <Grid container className="golfSec2">
-                    <Grid item md={5} xs={12} className="">
-                        <Grid className="Sec2Inner courseIntroducing">
+                    <Grid item md={5} xs={12} className="Sec2Inner">
+                        <Grid className=" courseIntroducing">
                             <h3>코스 소개</h3>
                         </Grid>
                         <Grid container className="golfSec2Inner">
