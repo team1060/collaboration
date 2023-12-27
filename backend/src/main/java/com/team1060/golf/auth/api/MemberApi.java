@@ -1,5 +1,7 @@
 package com.team1060.golf.auth.api;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -36,7 +38,14 @@ import lombok.extern.log4j.Log4j2;
 public class MemberApi {
 	private final MemberService memberService;
 	private final PasswordEncoder encoder;
-
+	
+	// 기존 회원 전체 조회 
+	@GetMapping("/join")
+	@CrossOrigin
+	public List<ViewMember> getEmailList(){
+		return memberService.selectAll();
+	}
+	
 	// 회원가입
 	@PostMapping("/join")
 	@CrossOrigin
@@ -64,11 +73,11 @@ public class MemberApi {
 	}
 
 	// 이메일 중복 체크
-	@GetMapping("/join")
-	@CrossOrigin
-	public ResponseEntity<Boolean> checkedEmail(@RequestParam("email") String email) {
-	    boolean isCheck = memberService.checkedEmail(email);
-	    return ResponseEntity.ok(isCheck);
-	}
+//	@GetMapping("/join")
+//	@CrossOrigin
+//	public ResponseEntity<Boolean> checkedEmail(@RequestParam("email") String email) {
+//	    boolean isCheck = memberService.checkedEmail(email);
+//	    return ResponseEntity.ok(isCheck);
+//	}
 
 }
