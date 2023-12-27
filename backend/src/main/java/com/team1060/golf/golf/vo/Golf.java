@@ -24,5 +24,4 @@ public class Golf { // 골프장
 	private String address; // 주소 
 	private String contact; // 전화번호 
 	private String fax; // 팩스번호 
-	
 }

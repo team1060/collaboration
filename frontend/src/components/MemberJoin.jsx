@@ -17,32 +17,66 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import { Container, Typography, Grid, Button, ListItem } from '@mui/material';
 import JoinData from './data/JoinData.js';
 import '../components/style/MemberJoin.scss';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllMembers } from '../services/auth/Member.js';
 
 function MemberJoin() {
   const [open, setOpen] = React.useState([false, false, false, false]);
-  const [check, setCheck] = useState();
   // 모든 계정정보
   const [allEmail, setAllEmail] = useState([]);
   // 중복확인
   const [inputValue, setInputValue] = useState("");
+  // 비밀번호 이벤트
+  const [pwInput, setPwInput] = useState("");
   const [viewMessage, setViewMessage] = useState("");
+  const [pwViewMessage, setpwViewMessage] = useState("");
 
+  const [pwCheckMessage, setPwCheckMessage] = useState("");
+
+  
   const dataHandler = (e) => {
     const value = e.target.value;
     setInputValue(value);
 
+    // 이메일 형식 유효성 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = emailRegex.test(value);
+   
     // 중복 여부 확인
     const isDuplicate = allEmail.some((item) => item.email === value);
+    
     // 중복이면 처리
-    if (isDuplicate) {
-      console.log("중복된 아이디가 있습니다.");
-      setViewMessage("중복된 아이디가 있습니다.");
+    if (isDuplicate || !isEmailValid) {
+      console.log("사용불가능한 아이디입니다.");
+      setViewMessage("사용불가능한 이메일입니다.");
     } else {
       console.log("사용가능한 아이디입니다.");
-      setViewMessage("사용가능한 아이디입니다.");
+      setViewMessage("사용가능한 이메일입니다.");
+    }
+  };
+
+  const dataPwHandler = (e) => {
+    const value = e.target.value;
+    setPwInput(value);
+
+     // 비밀번호 유효성 검사 
+     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
+     const isPasswordValid = passwordRegex.test(value);
+
+     if(!isPasswordValid) {
+      setpwViewMessage("비밀번호는 8~16자 영문, 숫자, 특수문자를 포함해야 합니다.")
+    } else {
+      setpwViewMessage("유효한 비밀번호 형식입니다.")
+    }
+  }
+  // 비밀번호 체크 여부 
+  const dataPwCheckHandler = (e) => {
+    const value = e.target.value;
+    // 비밀번호 확인 값이 비밀번호와 일치하는지 확인
+    if (pwInput === value) {
+      setPwCheckMessage("비밀번호가 일치합니다.");
+    } else {
+      setPwCheckMessage("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
     }
   };
 
@@ -117,7 +151,6 @@ function MemberJoin() {
       try {
         const userData = await getAllMembers();
         setAllEmail(userData);
-        console.log(allEmail)
       } catch (error) {
         // 에러 처리
       }
@@ -145,13 +178,13 @@ function MemberJoin() {
           <Grid item xs={8} lg={7}>
             <TextField
               fullWidth
-              label={'이메일'}
+              
               placeholder={'이메일을 입력해주세요'}
               name='email'
               id='email'
               autoComplete="email"
               onChange={dataHandler}
-              value={inputValue}
+              value={inputValue}            
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -159,12 +192,15 @@ function MemberJoin() {
                   </InputAdornment>
                 ),
               }}
+              error={viewMessage.includes("불가")}
             />
           </Grid>
         </Grid>
+
         <Grid container spacing={3} className="inputfield">
           <Grid item xs={3} lg={2} className="inputtext"></Grid>
-          <Grid style={{ color: viewMessage.includes('중복') ? 'red' : 'green' }} item xs={8} lg={7}>{viewMessage}</Grid></Grid>
+          <Grid style={{marginBottom: '10px' ,color: viewMessage.includes('불가능') ? 'red' : 'green' }} item xs={8} lg={7}>{viewMessage}</Grid></Grid>
+
         <Grid container spacing={3} className="inputfield">
           <Grid item xs={3} lg={2} className="inputtext">
             비밀번호
@@ -173,10 +209,11 @@ function MemberJoin() {
           <Grid item xs={8} lg={7}>
             <TextField
               fullWidth
-              label={'비밀번호'}
               placeholder={'비밀번호를 입력해주세요'}
               type={showPassword ? 'text' : 'password'}
               name='password'
+              onChange={dataPwHandler}
+              value={pwInput}
               autoComplete="current-password"
               InputProps={{
                 startAdornment: (
@@ -197,9 +234,14 @@ function MemberJoin() {
                   </InputAdornment>
                 ),
               }}
+              error={pwViewMessage.includes("특수")}
             />
           </Grid>
         </Grid>
+        
+        <Grid container spacing={3} className="inputfield">
+          <Grid item xs={3} lg={2} className="inputtext"></Grid>
+          <Grid style={{marginBottom: '10px', color: pwViewMessage.includes('특수') ? 'red' : 'green' }} item xs={8} lg={7}>{pwViewMessage}</Grid></Grid>
 
         <Grid container spacing={3} className="inputfield">
           <Grid item xs={3} lg={2} className="inputtext">
@@ -209,10 +251,10 @@ function MemberJoin() {
           <Grid item xs={8} lg={7}>
             <TextField
               fullWidth
-              label={'비밀번호'}
               placeholder={'비밀번호를 입력해주세요'}
               type={showPassword ? 'text' : 'password'}
               name='password'
+              onChange={dataPwCheckHandler}
               autoComplete="current-password"
               InputProps={{
                 startAdornment: (
@@ -233,9 +275,17 @@ function MemberJoin() {
                   </InputAdornment>
                 ),
               }}
+              error={pwCheckMessage.includes("일치하지 않습니다")}
             />
           </Grid>
         </Grid>
+
+        <Grid container spacing={3} className="inputfield">
+        <Grid item xs={3} lg={2} className="inputtext"></Grid>
+        <Grid style={{marginBottom: '10px', color: pwCheckMessage.includes('일치하지 않습니다') ? 'red' : 'green' }} item xs={8} lg={7}>
+          {pwCheckMessage}
+        </Grid>
+      </Grid>
 
         <Grid container spacing={3} className="inputfield">
           <Grid item xs={3} lg={2} className="inputtext">
@@ -244,8 +294,8 @@ function MemberJoin() {
           </Grid>
           <Grid item xs={8} lg={7}>
             <TextField
+              className='textInput'
               fullWidth
-              label={'닉네임'}
               placeholder={'닉네임을 입력해주세요'}
               name='nickname'
               id='nickname'
@@ -266,8 +316,8 @@ function MemberJoin() {
           </Grid>
           <Grid item xs={8} lg={7}>
             <TextField
+            className='textInput'
               fullWidth
-              label={'이름'}
               placeholder={'이름을 입력해주세요'}
               name='username'
               id='username'
@@ -283,38 +333,16 @@ function MemberJoin() {
         </Grid>
         <Grid container spacing={3} className="inputfield">
           <Grid item xs={3} lg={2} className="inputtext">
-            생년월일
+            연락처
             <span>*</span>
           </Grid>
           <Grid item xs={8} lg={7}>
             <TextField
+            className='textInput'
               fullWidth
-              label={'생년월일'}
               placeholder={'생년월일을 입력해주세요'}
               name='bithdate'
               id='bithdate'
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SlideshowIcon />
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </Grid>
-        </Grid>
-        <Grid container spacing={3} className="inputfield">
-          <Grid item xs={3} lg={2} className="inputtext">
-            생년월일
-            <span>*</span>
-          </Grid>
-          <Grid item xs={8} lg={7}>
-            <TextField
-              fullWidth
-              label={'휴대폰번호'}
-              placeholder={'- 을 뺀 휴대폰 번호를 입력해주세요'}
-              name='phonenumber'
-              id='phonenumber'
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
