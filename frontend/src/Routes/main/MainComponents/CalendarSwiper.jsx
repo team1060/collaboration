@@ -65,7 +65,7 @@ useEffect(() => {
           {/* <h2 className=''>예약 가능날짜 확인하기</h2> */}
           <Link to={"/reservation"}>
             <Button variant="contained" color="primary">
-              상세보기
+            골프 예약하기
             </Button>
             </Link>
         </div>
