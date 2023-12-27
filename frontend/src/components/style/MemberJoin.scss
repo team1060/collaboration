@@ -10,7 +10,7 @@
     .inputfield{
         display: flex;
         justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .inputtext {
         display: flex;
@@ -57,5 +57,8 @@
     }
     .checkbut {
         width: 30px;
+    }
+    .textInput {
+        margin-bottom: 15px;
     }
 }

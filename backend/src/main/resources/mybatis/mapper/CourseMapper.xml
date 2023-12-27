@@ -51,4 +51,9 @@
 		where name = #{name}
      	and golf_date = #{golf_date}
 	</select>
+	
+	<!-- 날짜별 코스 갯수 조회 -->
+	<select id="selectDataCourse" resultType="java.lang.Integer">
+		select count(*) AS course_count from tbl_g_course where golf_date = #{golf_date, jdbcType=DATE} and golf_status = 1
+	</select>
 </mapper>

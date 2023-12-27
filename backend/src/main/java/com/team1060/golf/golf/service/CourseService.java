@@ -1,5 +1,6 @@
 package com.team1060.golf.golf.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -46,5 +47,9 @@ public class CourseService {
 	// 코스 삭제 
 	public int removeCourse(Long course_no) {
 		return courseMapper.delete(course_no);
+	}
+	// 날짜별 코스 조회 
+	public int selectCourseCount(LocalDate golf_date) {
+		return courseMapper.selectDataCourse(golf_date);
 	}
 }

@@ -34,4 +34,7 @@ public interface CourseMapper {
 	int updateCourse(int golf_status);
 	// 코스 삭제 
 	int delete(Long course_no);
+	// 날짜별 코스 갯수 조회
+	Integer selectDataCourse(@Param("golf_date") LocalDate golf_date);
+	
 }
