@@ -11,7 +11,7 @@ const GolfCourseCard = ({ course, loading, error }) => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div style={{ width: "100%", margin: "0 auto" }} className='GolfCourseCard'>
+    <div style={{ maxWidth:"1200px", margin: "0 auto" }} className='GolfCourseCard'>
       <Card sx={{ display: 'flex', margin: '20px', padding: '10px' }}>
         {/* 이미지 자리 (임시로 색상만 표시) */}
         <CardMedia

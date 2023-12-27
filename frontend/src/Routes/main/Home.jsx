@@ -55,6 +55,7 @@ function HomeList() {
           course={selectedCourse}
           loading={loading}
           error={error}
+          
         />
       )}
       {/* 골프소개  */}
