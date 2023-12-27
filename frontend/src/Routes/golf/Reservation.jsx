@@ -2,7 +2,8 @@ import './style/Reservation.scss'
 import Head from "./reservation/Head";
 import Calendar from "./reservation/Calendar";
 import Course from "./reservation/Course";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Class } from '@mui/icons-material';
 
 
 function Reservation() {
@@ -24,7 +25,7 @@ function Reservation() {
   }
 
   return (
-    <>
+    <div id='reserve'>
       <Head />
       <Calendar parentView={parentView} parentGolf={parentGolf}/>
       <Course golf={golf} view={view} index={index}/>
@@ -32,7 +33,7 @@ function Reservation() {
         테스트
       </div> */}
 
-    </>
+    </div>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -28,12 +28,12 @@ function ReserveTable() {
       ];
       
       // 시간 설정 
-  const formatTime = (time) => {
-    const date = new Date(`2000-01-01T${time}`);
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    return `${hours}:${minutes}`;
-  };
+  // const formatTime = (time) => {
+  //   const date = new Date(`2000-01-01T${time}`);
+  //   const hours = date.getHours().toString().padStart(2, '0');
+  //   const minutes = date.getMinutes().toString().padStart(2, '0');
+  //   return `${hours}:${minutes}`;
+  // };
   // 예약 내역 불러오기 
   useEffect(() => {
 
