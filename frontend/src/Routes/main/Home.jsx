@@ -15,9 +15,10 @@ import './style/Home.scss'
 
 // import { Button } from '@mui/material';s
 // 사이트 메인페이지 
+import Banner from '../../components/Banner';
+// 이벤트 /소식
 
-
-// import { blue } from '@mui/material/colors'; 
+import Event from './MainComponents/Event';
 function HomeList() {
   // 골프 코스와 관련된 상태 정의
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -61,8 +62,9 @@ function HomeList() {
       {/* 골프소개  */}
       <MainCard/>
       <ShopCard/>
-      {/* <Banner/>
-      <BannerManagement/> */}
+       <Banner/>
+      <Event/>
+      
 
 
     </div>
