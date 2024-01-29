@@ -1,7 +1,7 @@
 # collaboration
-> [참고]
-> [백엔드 레파지토리](https://github.com/team1060/collaboration_backend)
-> [프론트엔드 레파지토리](https://github.com/team1060/collaboration_frontend)
+> [참고]<br />
+> [백엔드 레파지토리](https://github.com/team1060/collaboration_backend)<br />
+> [프론트엔드 레파지토리](https://github.com/team1060/collaboration_frontend)<br />
 
 ## 골프의민족 홈페이지
 [골프의민족 이용하기]
